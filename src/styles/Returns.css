@@ -1,0 +1,843 @@
+/* =====================================================
+   RETURNS ENGINE
+   ZENVE FASHION
+===================================================== */
+
+
+/* =====================================================
+   GLOBAL PAGE
+===================================================== */
+
+.returns-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f8f7f2;
+
+  color: #17130f;
+
+  font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  overflow-x: hidden;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.returns-header {
+  width: 100%;
+  min-height: 182px;
+
+  background: #fffdf9;
+
+  border-bottom: 1px solid #ddd8cf;
+
+  display: grid;
+
+  grid-template-columns: 125px 1fr auto;
+
+  align-items: start;
+
+  padding: 32px 43px 28px 42px;
+
+  column-gap: 24px;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.returns-logo-area {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: center;
+
+  padding-top: 26px;
+}
+
+.returns-logo-mark {
+  width: 82px;
+
+  min-height: 82px;
+
+  position: relative;
+
+  text-align: center;
+
+  color: #15110d;
+}
+
+
+/*
+  Replace this block with your real Zenve logo image
+  if you already have one.
+*/
+
+.returns-logo-z {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 48px;
+
+  line-height: 42px;
+
+  font-weight: 700;
+
+  font-style: italic;
+
+  transform: rotate(-12deg);
+
+  color: #15110d;
+}
+
+.returns-logo-text {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  line-height: 20px;
+
+  margin-top: -2px;
+}
+
+.returns-logo-subtext {
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 5px;
+
+  letter-spacing: 2.4px;
+
+  margin-top: 1px;
+
+  color: #76695e;
+}
+
+
+/* =====================================================
+   HEADER CONTENT
+===================================================== */
+
+.returns-header-content {
+  padding-top: 3px;
+
+  min-width: 0;
+}
+
+
+/* =====================================================
+   BACK LINK
+===================================================== */
+
+.returns-back {
+  height: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #74695f;
+
+  font-size: 16px;
+
+  letter-spacing: 2px;
+
+  font-weight: 400;
+
+  white-space: nowrap;
+}
+
+.returns-back-icon {
+  width: 18px;
+
+  height: 18px;
+
+  color: #756b63;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.returns-title-row {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 7px;
+
+  margin-top: 14px;
+}
+
+.returns-title-row h1 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 36px;
+
+  line-height: 1.05;
+
+  font-weight: 500;
+
+  letter-spacing: -1px;
+
+  color: #0f0d0b;
+}
+
+.returns-layer-number {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  color: #d28c4c;
+
+  font-size: 35px;
+
+  line-height: 1;
+
+  font-weight: 400;
+}
+
+
+/* =====================================================
+   SUBTITLE
+===================================================== */
+
+.returns-subtitle {
+  margin: 10px 0 0;
+
+  color: #776d65;
+
+  font-size: 20px;
+
+  line-height: 1.35;
+
+  font-weight: 400;
+}
+
+
+/* =====================================================
+   HEADER ACTIONS
+===================================================== */
+
+.returns-header-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding-top: 45px;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.returns-search {
+  height: 48px;
+
+  min-width: 288px;
+
+  border: 1px solid #ded9d1;
+
+  border-radius: 7px;
+
+  background: #fffdf9;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 0 13px;
+
+  color: #6e665e;
+
+  font-size: 18px;
+
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.returns-icon {
+  width: 22px;
+
+  height: 22px;
+
+  flex: 0 0 auto;
+
+  color: #70675e;
+}
+
+.returns-search kbd {
+  margin-left: auto;
+
+  padding: 3px 7px;
+
+  border: 1px solid #e0dcd5;
+
+  border-radius: 6px;
+
+  background: #faf8f4;
+
+  color: #786f66;
+
+  font-size: 14px;
+
+  font-family:
+    Inter,
+    "Segoe UI",
+    sans-serif;
+
+  line-height: 1.2;
+}
+
+
+/* =====================================================
+   PROFILE
+===================================================== */
+
+.returns-profile {
+  height: 48px;
+
+  min-width: 295px;
+
+  border: 1px solid #ded9d1;
+
+  border-radius: 7px;
+
+  background: #fffdf9;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 0 13px;
+
+  color: #17130f;
+
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.returns-user-name {
+  font-size: 18px;
+
+  color: #191511;
+}
+
+.returns-admin {
+  margin-left: auto;
+
+  padding: 6px 14px;
+
+  border-radius: 18px;
+
+  background: #f4e6d3;
+
+  color: #17130f;
+
+  font-size: 16px;
+
+  font-weight: 500;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.returns-main {
+  width: 100%;
+
+  padding: 40px 45px 42px;
+
+  background: #f8f7f2;
+}
+
+
+/* =====================================================
+   STATISTICS GRID
+===================================================== */
+
+.returns-stats-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 17px;
+
+  margin-bottom: 0;
+}
+
+
+/* =====================================================
+   STAT CARD
+===================================================== */
+
+.returns-stat-card {
+  min-height: 109px;
+
+  background: #fffdfb;
+
+  border: 1px solid #ded9d1;
+
+  border-radius: 9px;
+
+  padding: 20px 23px 17px;
+
+  box-shadow:
+    0 12px 24px rgba(34, 26, 18, 0.05);
+}
+
+.returns-stat-label {
+  font-size: 16px;
+
+  letter-spacing: 2px;
+
+  color: #7c7168;
+
+  font-weight: 400;
+
+  margin-bottom: 11px;
+}
+
+.returns-stat-value {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 35px;
+
+  line-height: 1;
+
+  color: #080705;
+
+  font-weight: 500;
+}
+
+
+/* =====================================================
+   GENERAL PANEL
+===================================================== */
+
+.returns-panel {
+  width: 100%;
+
+  background: #fffdfb;
+
+  border: 1px solid #ded9d1;
+
+  border-radius: 9px;
+
+  box-shadow:
+    0 12px 25px rgba(34, 26, 18, 0.05);
+
+  padding: 31px 28px 29px;
+}
+
+
+/* =====================================================
+   RAISE RETURN PANEL
+===================================================== */
+
+.raise-return-panel {
+  margin-top: 0;
+
+  border-top-left-radius: 0;
+
+  border-top-right-radius: 0;
+
+  padding-top: 32px;
+}
+
+
+/* =====================================================
+   WORKFLOW PANEL
+===================================================== */
+
+.workflow-panel {
+  margin-top: 0;
+
+  border-top-left-radius: 0;
+
+  border-top-right-radius: 0;
+
+  border-top: 1px solid #ded9d1;
+
+  padding-top: 31px;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.returns-section-heading h2 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 28px;
+
+  line-height: 1.15;
+
+  font-weight: 500;
+
+  color: #11100e;
+}
+
+.returns-section-heading p {
+  margin: 9px 0 0;
+
+  color: #786e65;
+
+  font-size: 20px;
+
+  line-height: 1.35;
+
+  font-weight: 400;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.returns-empty-state {
+  width: 100%;
+
+  min-height: 120px;
+
+  margin-top: 25px;
+
+  border: 1px dashed #ddd7cf;
+
+  border-radius: 6px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 25px;
+
+  color: #786e65;
+
+  font-size: 19px;
+
+  line-height: 1.4;
+
+  background: #fffdfa;
+}
+
+
+/* =====================================================
+   RESPONSIVE - LARGE LAPTOP
+===================================================== */
+
+@media (max-width: 1500px) {
+
+  .returns-header {
+    grid-template-columns: 110px 1fr auto;
+
+    padding-left: 30px;
+
+    padding-right: 30px;
+  }
+
+  .returns-main {
+    padding-left: 35px;
+
+    padding-right: 35px;
+  }
+
+  .returns-search {
+    min-width: 255px;
+  }
+
+  .returns-profile {
+    min-width: 265px;
+  }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - LAPTOP
+===================================================== */
+
+@media (max-width: 1200px) {
+
+  .returns-header {
+    grid-template-columns: 95px 1fr;
+
+    min-height: auto;
+
+    padding: 25px 25px 24px;
+  }
+
+  .returns-header-actions {
+    grid-column: 2;
+
+    grid-row: 2;
+
+    padding-top: 20px;
+
+    justify-content: flex-start;
+  }
+
+  .returns-logo-area {
+    padding-top: 25px;
+  }
+
+  .returns-main {
+    padding: 30px 25px;
+  }
+
+  .returns-stats-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .returns-header {
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 20px;
+  }
+
+  .returns-logo-area {
+    width: 100%;
+
+    justify-content: flex-start;
+
+    padding: 0 0 10px;
+  }
+
+  .returns-header-content {
+    width: 100%;
+  }
+
+  .returns-title-row h1 {
+    font-size: 31px;
+  }
+
+  .returns-layer-number {
+    font-size: 30px;
+  }
+
+  .returns-subtitle {
+    font-size: 17px;
+  }
+
+  .returns-header-actions {
+    width: 100%;
+
+    padding-top: 20px;
+
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .returns-search,
+  .returns-profile {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .returns-main {
+    padding: 20px 15px 30px;
+  }
+
+  .returns-stats-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .returns-panel {
+    padding: 24px 18px;
+  }
+
+  .returns-section-heading h2 {
+    font-size: 25px;
+  }
+
+  .returns-section-heading p {
+    font-size: 17px;
+  }
+
+  .returns-empty-state {
+    font-size: 16px;
+
+    min-height: 105px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+
+  .returns-header {
+    padding: 17px;
+  }
+
+  .returns-logo-mark {
+    width: 70px;
+  }
+
+  .returns-logo-z {
+    font-size: 39px;
+  }
+
+  .returns-logo-text {
+    font-size: 15px;
+  }
+
+  .returns-back {
+    font-size: 13px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .returns-title-row {
+    margin-top: 10px;
+
+    gap: 5px;
+  }
+
+  .returns-title-row h1 {
+    font-size: 27px;
+
+    letter-spacing: -0.5px;
+  }
+
+  .returns-layer-number {
+    font-size: 27px;
+  }
+
+  .returns-subtitle {
+    font-size: 15px;
+
+    line-height: 1.45;
+  }
+
+  .returns-search {
+    font-size: 16px;
+  }
+
+  .returns-profile {
+    min-width: 0;
+  }
+
+  .returns-user-name {
+    font-size: 16px;
+  }
+
+  .returns-admin {
+    font-size: 14px;
+
+    padding: 5px 10px;
+  }
+
+  .returns-main {
+    padding: 15px 10px 25px;
+  }
+
+  .returns-stat-card {
+    min-height: 95px;
+
+    padding: 17px;
+  }
+
+  .returns-stat-label {
+    font-size: 13px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .returns-stat-value {
+    font-size: 30px;
+  }
+
+  .returns-panel {
+    padding: 20px 14px;
+  }
+
+  .returns-section-heading h2 {
+    font-size: 23px;
+  }
+
+  .returns-section-heading p {
+    font-size: 16px;
+  }
+
+  .returns-empty-state {
+    margin-top: 20px;
+
+    min-height: 95px;
+
+    padding: 18px;
+
+    font-size: 15px;
+  }
+
+}

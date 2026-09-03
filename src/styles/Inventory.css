@@ -1,0 +1,1658 @@
+/* =========================================================
+   INVENTORY ENGINE
+   GLOBAL RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: #f7f5ef;
+  color: #17130f;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.inventory-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f7f5ef;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.inventory-header {
+  width: 100%;
+  min-height: 190px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 28px 36px;
+
+  background: #fcfbf8;
+
+  border-bottom: 1px solid #ddd8cf;
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   HEADER LEFT
+========================================================= */
+
+.inventory-header-left {
+  display: flex;
+  align-items: center;
+
+  min-width: 0;
+
+  gap: 35px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.inventory-logo {
+  width: 76px;
+  min-width: 76px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.logo-symbol {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 38px;
+  font-style: italic;
+  font-weight: 700;
+
+  color: #1c1712;
+}
+
+.logo-text {
+  margin-top: 2px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 18px;
+  line-height: 17px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.logo-text span {
+  display: block;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 6px;
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   TITLE AREA
+========================================================= */
+
+.inventory-title-area {
+  min-width: 0;
+}
+
+.back-link {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+
+  color: #746b62;
+
+  font-size: 15px;
+  letter-spacing: 1.5px;
+
+  white-space: nowrap;
+}
+
+.back-arrow {
+  font-size: 23px;
+  line-height: 1;
+}
+
+.inventory-title-area h1 {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 38px;
+  line-height: 1.1;
+
+  font-weight: 500;
+
+  color: #120f0c;
+}
+
+.page-number {
+  color: #c28c52;
+}
+
+.inventory-title-area p {
+  margin-top: 12px;
+
+  color: #766c63;
+
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   HEADER RIGHT
+========================================================= */
+
+.inventory-header-right {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-box {
+  height: 52px;
+  min-width: 315px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 14px;
+
+  border: 1px solid #ddd8cf;
+  border-radius: 7px;
+
+  background: #fbfaf7;
+
+  color: #766e66;
+}
+
+.search-icon {
+  font-size: 28px;
+  line-height: 1;
+  transform: rotate(-20deg);
+}
+
+.search-placeholder {
+  flex: 1;
+
+  font-size: 19px;
+
+  white-space: nowrap;
+}
+
+.search-shortcut {
+  padding: 3px 7px;
+
+  border: 1px solid #e0dbd3;
+  border-radius: 6px;
+
+  font-size: 13px;
+
+  color: #777068;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-box {
+  min-width: 320px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 0 14px;
+
+  border: 1px solid #ddd8cf;
+  border-radius: 7px;
+
+  background: #fbfaf7;
+}
+
+.profile-icon {
+  font-size: 27px;
+  color: #706960;
+}
+
+.profile-name {
+  flex: 1;
+
+  font-size: 19px;
+
+  white-space: nowrap;
+}
+
+.admin-badge {
+  padding: 7px 17px;
+
+  border-radius: 20px;
+
+  background: #f1e4d4;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.inventory-content {
+  width: 100%;
+
+  padding: 42px 36px 60px;
+
+  max-width: 1900px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   SUMMARY GRID
+========================================================= */
+
+.summary-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   SUMMARY CARD
+========================================================= */
+
+.summary-card {
+  min-height: 144px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 22px 25px;
+
+  background: #fdfcf9;
+
+  border: 1px solid #ddd8cf;
+  border-radius: 10px;
+
+  box-shadow:
+    0 10px 22px rgba(48, 39, 30, 0.07);
+}
+
+.summary-label {
+  margin-bottom: 8px;
+
+  color: #786f67;
+
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.summary-value {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 43px;
+  line-height: 1;
+
+  font-weight: 500;
+}
+
+.summary-description {
+  margin-top: 7px;
+
+  color: #766d64;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   LEDGER SECTION
+========================================================= */
+
+.ledger-section {
+  width: 100%;
+
+  padding: 34px 30px 28px;
+
+  background: #fdfcf9;
+
+  border: 1px solid #ddd8cf;
+  border-radius: 11px;
+
+  box-shadow:
+    0 10px 28px rgba(48, 39, 30, 0.07);
+
+  margin-top: 0;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+  margin-bottom: 26px;
+}
+
+.section-heading h2 {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 31px;
+  line-height: 1.2;
+
+  font-weight: 500;
+
+  color: #16120e;
+}
+
+.section-heading p {
+  margin-top: 9px;
+
+  color: #776e65;
+
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   INVENTORY LIST
+========================================================= */
+
+.inventory-list {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   INVENTORY CARD
+========================================================= */
+
+.inventory-card {
+  width: 100%;
+
+  padding: 26px 25px 24px;
+
+  background: #fffefa;
+
+  border: 1px solid #ddd8cf;
+  border-radius: 7px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   PRODUCT HEADER
+========================================================= */
+
+.product-header {
+  width: 100%;
+}
+
+.product-title-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.product-title-row h3 {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 25px;
+  line-height: 1.25;
+
+  font-weight: 700;
+
+  color: #16120e;
+}
+
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.location-badge,
+.out-stock-badge {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 34px;
+
+  padding: 5px 15px;
+
+  border-radius: 18px;
+
+  font-size: 16px;
+
+  white-space: nowrap;
+}
+
+.location-badge {
+  background: #f3e7d8;
+  color: #17130f;
+}
+
+.out-stock-badge {
+  background: #fae3e1;
+  color: #df302c;
+}
+
+
+/* =========================================================
+   SKU
+========================================================= */
+
+.product-sku {
+  margin-top: 8px;
+
+  color: #766d64;
+
+  font-size: 16px;
+  letter-spacing: 0.3px;
+
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   INVENTORY METRICS
+========================================================= */
+
+.inventory-metrics {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(7, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-top: 20px;
+}
+
+.inventory-metric {
+  min-width: 0;
+  min-height: 86px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 12px;
+
+  background: #eeebe3;
+
+  border-radius: 6px;
+}
+
+.metric-label {
+  color: #786f67;
+
+  font-size: 14px;
+  letter-spacing: 1.8px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.metric-value {
+  margin-top: 7px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 28px;
+  line-height: 1;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.inventory-actions {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 24px;
+}
+
+
+/* =========================================================
+   QUANTITY INPUT
+========================================================= */
+
+.quantity-input {
+  width: 180px;
+  height: 53px;
+
+  padding: 0 18px;
+
+  border: 1px solid #ddd8cf;
+  border-radius: 6px;
+
+  outline: none;
+
+  background: #fffefa;
+
+  color: #17130f;
+
+  font-size: 19px;
+
+  box-shadow:
+    0 3px 7px rgba(50, 40, 30, 0.08);
+}
+
+.quantity-input::placeholder {
+  color: #796f66;
+}
+
+.quantity-input:focus {
+  border-color: #8c7d6d;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.action-button {
+  min-height: 53px;
+
+  padding: 0 18px;
+
+  border: 1px solid #ddd8cf;
+  border-radius: 6px;
+
+  background: #fffefa;
+
+  color: #17130f;
+
+  font-size: 17px;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 3px 7px rgba(50, 40, 30, 0.08);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.action-button:hover:not(:disabled) {
+  background: #f3f0e9;
+  transform: translateY(-1px);
+}
+
+.primary-button {
+  background: #241b15;
+  color: #fff;
+
+  border-color: #241b15;
+}
+
+.primary-button:hover {
+  background: #342820;
+}
+
+.action-button:disabled,
+.disabled-button {
+  color: #99928b;
+  background: #faf9f5;
+  opacity: 0.75;
+}
+
+
+/* =========================================================
+   LOCATION SELECT
+========================================================= */
+
+.location-select {
+  width: 270px;
+  min-height: 53px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 18px;
+
+  border: 1px solid #ddd8cf;
+  border-radius: 6px;
+
+  background: #fffefa;
+
+  font-size: 18px;
+
+  box-shadow:
+    0 3px 7px rgba(50, 40, 30, 0.08);
+}
+
+.select-arrow {
+  font-size: 25px;
+  color: #81786f;
+}
+
+
+/* =========================================================
+   RULES SECTION
+========================================================= */
+
+.rules-section {
+  width: 100%;
+
+  margin-top: 0;
+
+  padding: 35px 34px 38px;
+
+  background: #fdfcf9;
+
+  border: 1px solid #ddd8cf;
+  border-radius: 11px;
+
+  box-shadow:
+    0 10px 28px rgba(48, 39, 30, 0.07);
+}
+
+.rules-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  column-gap: 60px;
+
+  margin-top: 26px;
+}
+
+.rules-column {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.rule {
+  color: #71685f;
+
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   1600px - 1899px
+========================================================= */
+
+@media (max-width: 1899px) {
+
+  .inventory-header {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .inventory-content {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .search-box {
+    min-width: 290px;
+  }
+
+  .profile-box {
+    min-width: 290px;
+  }
+
+  .product-title-row h3 {
+    font-size: 23px;
+  }
+
+  .action-button {
+    font-size: 16px;
+  }
+
+  .location-select {
+    width: 245px;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP LARGE
+   1366px - 1599px
+========================================================= */
+
+@media (max-width: 1599px) {
+
+  .inventory-header {
+    min-height: 175px;
+
+    padding: 25px 28px;
+  }
+
+  .inventory-header-left {
+    gap: 25px;
+  }
+
+  .inventory-content {
+    padding: 36px 28px 50px;
+  }
+
+  .inventory-title-area h1 {
+    font-size: 34px;
+  }
+
+  .inventory-title-area p {
+    font-size: 18px;
+  }
+
+  .search-box {
+    min-width: 270px;
+  }
+
+  .profile-box {
+    min-width: 270px;
+  }
+
+  .profile-name {
+    font-size: 17px;
+  }
+
+  .summary-card {
+    min-height: 138px;
+  }
+
+  .inventory-metric {
+    min-height: 80px;
+  }
+
+  .metric-label {
+    font-size: 12px;
+  }
+
+  .metric-value {
+    font-size: 25px;
+  }
+
+  .quantity-input {
+    width: 160px;
+  }
+
+  .action-button {
+    padding: 0 15px;
+  }
+
+  .location-select {
+    width: 220px;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP
+   1100px - 1365px
+========================================================= */
+
+@media (max-width: 1365px) {
+
+  .inventory-header {
+    min-height: 160px;
+
+    padding: 22px 24px;
+  }
+
+  .inventory-logo {
+    width: 65px;
+    min-width: 65px;
+  }
+
+  .inventory-header-left {
+    gap: 20px;
+  }
+
+  .inventory-title-area h1 {
+    font-size: 30px;
+  }
+
+  .inventory-title-area p {
+    font-size: 16px;
+  }
+
+  .back-link {
+    margin-bottom: 13px;
+    font-size: 13px;
+  }
+
+  .inventory-header-right {
+    gap: 8px;
+  }
+
+  .search-box {
+    min-width: 230px;
+    height: 48px;
+  }
+
+  .search-placeholder {
+    font-size: 16px;
+  }
+
+  .profile-box {
+    min-width: 230px;
+    height: 48px;
+  }
+
+  .profile-name {
+    font-size: 15px;
+  }
+
+  .admin-badge {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .inventory-content {
+    padding: 30px 24px 45px;
+  }
+
+  .summary-card {
+    min-height: 130px;
+    padding: 20px;
+  }
+
+  .summary-value {
+    font-size: 38px;
+  }
+
+  .summary-description {
+    font-size: 15px;
+  }
+
+  .ledger-section,
+  .rules-section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .inventory-card {
+    padding: 22px 20px;
+  }
+
+  .product-title-row h3 {
+    font-size: 21px;
+  }
+
+  .inventory-metrics {
+    gap: 8px;
+  }
+
+  .inventory-metric {
+    padding: 10px;
+  }
+
+  .metric-label {
+    font-size: 11px;
+  }
+
+  .metric-value {
+    font-size: 23px;
+  }
+
+  .inventory-actions {
+    gap: 8px;
+  }
+
+  .quantity-input {
+    width: 140px;
+  }
+
+  .action-button {
+    min-height: 48px;
+    font-size: 14px;
+  }
+
+  .location-select {
+    min-height: 48px;
+    width: 200px;
+    font-size: 15px;
+  }
+
+  .rule {
+    font-size: 17px;
+  }
+}
+
+
+/* =========================================================
+   TABLET LANDSCAPE
+   900px - 1099px
+========================================================= */
+
+@media (max-width: 1099px) {
+
+  .inventory-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    min-height: auto;
+
+    padding: 22px;
+  }
+
+  .inventory-header-left {
+    width: 100%;
+  }
+
+  .inventory-header-right {
+    width: 100%;
+  }
+
+  .search-box,
+  .profile-box {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .inventory-content {
+    padding: 25px 20px 40px;
+  }
+
+  .summary-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+  }
+
+  .inventory-metrics {
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+  }
+
+  .inventory-actions {
+    align-items: stretch;
+  }
+
+  .quantity-input {
+    flex: 1 1 140px;
+  }
+
+  .action-button {
+    flex: 1 1 auto;
+  }
+
+  .location-select {
+    flex: 1 1 200px;
+  }
+
+  .rules-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   768px - 899px
+========================================================= */
+
+@media (max-width: 899px) {
+
+  .inventory-header-left {
+    align-items: flex-start;
+  }
+
+  .inventory-logo {
+    display: none;
+  }
+
+  .inventory-title-area h1 {
+    font-size: 29px;
+  }
+
+  .inventory-title-area p {
+    font-size: 15px;
+  }
+
+  .inventory-header-right {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box,
+  .profile-box {
+    width: 100%;
+  }
+
+  .ledger-section,
+  .rules-section {
+    padding: 24px 18px;
+  }
+
+  .section-heading h2 {
+    font-size: 27px;
+  }
+
+  .section-heading p {
+    font-size: 17px;
+  }
+
+  .inventory-card {
+    padding: 20px 17px;
+  }
+
+  .product-title-row h3 {
+    font-size: 20px;
+  }
+
+  .inventory-metrics {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+  }
+
+  .inventory-metric {
+    min-height: 78px;
+  }
+
+  .metric-label {
+    font-size: 12px;
+  }
+
+  .metric-value {
+    font-size: 25px;
+  }
+
+  .inventory-actions {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .quantity-input,
+  .location-select,
+  .action-button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .quantity-input {
+    height: 50px;
+  }
+
+  .location-select {
+    min-height: 50px;
+  }
+
+  .rules-grid {
+    margin-top: 20px;
+  }
+
+  .rule {
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE LARGE
+   600px - 767px
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .inventory-header {
+    padding: 20px 16px;
+  }
+
+  .inventory-title-area {
+    width: 100%;
+  }
+
+  .back-link {
+    margin-bottom: 12px;
+  }
+
+  .inventory-title-area h1 {
+    font-size: 27px;
+  }
+
+  .inventory-title-area p {
+    margin-top: 9px;
+    font-size: 15px;
+  }
+
+  .inventory-content {
+    padding: 18px 14px 35px;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .summary-card {
+    min-height: 120px;
+    padding: 19px;
+  }
+
+  .summary-value {
+    font-size: 37px;
+  }
+
+  .ledger-section {
+    margin-top: 0;
+    padding: 22px 14px;
+    border-radius: 9px;
+  }
+
+  .section-heading {
+    margin-bottom: 20px;
+  }
+
+  .section-heading h2 {
+    font-size: 25px;
+  }
+
+  .section-heading p {
+    font-size: 16px;
+  }
+
+  .inventory-list {
+    gap: 12px;
+  }
+
+  .inventory-card {
+    padding: 18px 14px;
+  }
+
+  .product-title-row {
+    gap: 8px;
+  }
+
+  .product-title-row h3 {
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .location-badge,
+  .out-stock-badge {
+    min-height: 30px;
+    padding: 4px 11px;
+    font-size: 14px;
+  }
+
+  .product-sku {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .inventory-metrics {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    margin-top: 16px;
+  }
+
+  .inventory-metric {
+    min-height: 75px;
+    padding: 10px;
+  }
+
+  .metric-label {
+    font-size: 11px;
+  }
+
+  .metric-value {
+    font-size: 24px;
+  }
+
+  .inventory-actions {
+    grid-template-columns: 1fr;
+
+    margin-top: 18px;
+  }
+
+  .quantity-input,
+  .action-button,
+  .location-select {
+    width: 100%;
+  }
+
+  .action-button {
+    min-height: 48px;
+    font-size: 15px;
+  }
+
+  .rules-section {
+    margin-top: 0;
+    padding: 22px 16px 28px;
+  }
+
+  .rules-grid {
+    gap: 18px;
+  }
+
+  .rules-column {
+    gap: 11px;
+  }
+
+  .rule {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+}
+
+
+/* =========================================================
+   MOBILE SMALL
+   BELOW 600px
+========================================================= */
+
+@media (max-width: 599px) {
+
+  .inventory-header {
+    padding: 17px 13px;
+  }
+
+  .inventory-title-area h1 {
+    font-size: 24px;
+  }
+
+  .inventory-title-area p {
+    font-size: 14px;
+  }
+
+  .search-box {
+    height: 46px;
+    min-height: 46px;
+  }
+
+  .search-placeholder {
+    font-size: 15px;
+  }
+
+  .search-shortcut {
+    display: none;
+  }
+
+  .profile-box {
+    height: 46px;
+    min-height: 46px;
+  }
+
+  .profile-name {
+    font-size: 14px;
+  }
+
+  .admin-badge {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  .inventory-content {
+    padding: 14px 10px 30px;
+  }
+
+  .summary-card {
+    min-height: 110px;
+  }
+
+  .summary-label {
+    font-size: 13px;
+  }
+
+  .summary-value {
+    font-size: 34px;
+  }
+
+  .summary-description {
+    font-size: 14px;
+  }
+
+  .ledger-section {
+    padding: 18px 11px;
+  }
+
+  .section-heading h2 {
+    font-size: 23px;
+  }
+
+  .section-heading p {
+    font-size: 14px;
+  }
+
+  .inventory-card {
+    padding: 16px 11px;
+  }
+
+  .product-title-row h3 {
+    font-size: 18px;
+  }
+
+  .location-badge,
+  .out-stock-badge {
+    font-size: 13px;
+  }
+
+  .product-sku {
+    font-size: 12px;
+  }
+
+  .inventory-metrics {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 7px;
+  }
+
+  .inventory-metric {
+    min-height: 70px;
+    padding: 9px;
+  }
+
+  .metric-label {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .metric-value {
+    font-size: 22px;
+  }
+
+  .quantity-input,
+  .action-button,
+  .location-select {
+    min-height: 47px;
+  }
+
+  .rules-section {
+    padding: 19px 13px 25px;
+  }
+
+  .rule {
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   BELOW 400px
+========================================================= */
+
+@media (max-width: 399px) {
+
+  .inventory-title-area h1 {
+    font-size: 22px;
+  }
+
+  .inventory-title-area p {
+    font-size: 13px;
+  }
+
+  .profile-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .inventory-metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .metric-label {
+    font-size: 9px;
+  }
+
+  .metric-value {
+    font-size: 20px;
+  }
+
+  .product-title-row h3 {
+    font-size: 17px;
+  }
+
+  .section-heading h2 {
+    font-size: 21px;
+  }
+}
+
+
+/* =========================================================
+   4K / ULTRA WIDE
+   2000px+
+========================================================= */
+
+@media (min-width: 2000px) {
+
+  .inventory-header {
+    min-height: 215px;
+
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+
+  .inventory-header-left {
+    gap: 45px;
+  }
+
+  .inventory-content {
+    max-width: 2400px;
+
+    padding: 50px 45px 75px;
+  }
+
+  .inventory-title-area h1 {
+    font-size: 45px;
+  }
+
+  .inventory-title-area p {
+    font-size: 23px;
+  }
+
+  .summary-card {
+    min-height: 165px;
+    padding: 28px 30px;
+  }
+
+  .summary-label {
+    font-size: 18px;
+  }
+
+  .summary-value {
+    font-size: 50px;
+  }
+
+  .summary-description {
+    font-size: 19px;
+  }
+
+  .ledger-section,
+  .rules-section {
+    padding: 40px 35px;
+  }
+
+  .section-heading h2 {
+    font-size: 35px;
+  }
+
+  .section-heading p {
+    font-size: 22px;
+  }
+
+  .inventory-card {
+    padding: 30px;
+  }
+
+  .product-title-row h3 {
+    font-size: 28px;
+  }
+
+  .product-sku {
+    font-size: 18px;
+  }
+
+  .inventory-metric {
+    min-height: 100px;
+    padding: 15px;
+  }
+
+  .metric-label {
+    font-size: 15px;
+  }
+
+  .metric-value {
+    font-size: 32px;
+  }
+
+  .quantity-input,
+  .action-button,
+  .location-select {
+    min-height: 58px;
+  }
+
+  .quantity-input {
+    width: 190px;
+  }
+
+  .action-button {
+    font-size: 18px;
+  }
+
+  .location-select {
+    width: 290px;
+    font-size: 19px;
+  }
+
+  .rule {
+    font-size: 21px;
+  }
+}

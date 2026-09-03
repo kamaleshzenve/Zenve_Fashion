@@ -1,0 +1,1358 @@
+/* =========================================================
+   DESIGNER PORTAL
+   GLOBAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.designer-portal-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #f8f6f1;
+  color: #17130f;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.designer-portal-header {
+  width: 100%;
+  min-height: 180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  padding: 30px 34px;
+
+  background: #fffdfa;
+
+  border-bottom: 1px solid #e6e0d8;
+}
+
+/* =========================================================
+   HEADER LEFT
+========================================================= */
+
+.portal-header-left {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+
+  min-width: 0;
+}
+
+.portal-logo {
+  width: 72px;
+  min-width: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portal-logo img {
+  display: block;
+
+  width: 70px;
+  height: auto;
+
+  object-fit: contain;
+}
+
+/* =========================================================
+   TITLE AREA
+========================================================= */
+
+.portal-title-area {
+  min-width: 0;
+}
+
+.portal-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 19px;
+
+  color: #796f67;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  letter-spacing: 1.7px;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.portal-back-link:hover {
+  color: #211912;
+  transform: translateX(-2px);
+}
+
+.portal-title {
+  margin: 0;
+
+  color: #100d0a;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 35px;
+  font-weight: 500;
+
+  line-height: 1.1;
+}
+
+.portal-title-number {
+  color: #c88a43;
+
+  margin-right: 8px;
+}
+
+.portal-subtitle {
+  margin: 12px 0 0;
+
+  color: #766d66;
+
+  font-size: 20px;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   HEADER RIGHT
+========================================================= */
+
+.portal-header-right {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.portal-search {
+  height: 53px;
+  min-width: 290px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 13px 0 17px;
+
+  border: 1px solid #e1dbd3;
+  border-radius: 6px;
+
+  background: #fffdfa;
+
+  color: #766e67;
+
+  font-size: 18px;
+}
+
+.portal-search svg {
+  flex-shrink: 0;
+}
+
+.portal-search span {
+  white-space: nowrap;
+}
+
+.portal-search kbd {
+  margin-left: auto;
+
+  padding: 3px 8px;
+
+  border: 1px solid #e2ddd6;
+  border-radius: 6px;
+
+  background: #f8f5f0;
+
+  color: #817971;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   USER
+========================================================= */
+
+.portal-user {
+  height: 53px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 0 12px 0 16px;
+
+  border: 1px solid #e1dbd3;
+  border-radius: 6px;
+
+  background: #fffdfa;
+
+  white-space: nowrap;
+}
+
+.portal-user svg {
+  color: #756d65;
+}
+
+.portal-user-name {
+  font-size: 18px;
+  color: #181411;
+}
+
+.portal-admin {
+  padding: 6px 13px;
+
+  border-radius: 20px;
+
+  background: #f2e5d4;
+
+  color: #3d2b1c;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   SIGNED IN
+========================================================= */
+
+.signed-in-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  min-width: 250px;
+}
+
+.signed-in-wrapper label {
+  padding-left: 1px;
+
+  color: #786e66;
+
+  font-size: 13px;
+
+  letter-spacing: 2px;
+}
+
+.signed-in-select-wrapper {
+  position: relative;
+
+  width: 100%;
+}
+
+.signed-in-select {
+  width: 100%;
+  height: 53px;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  padding: 0 45px 0 17px;
+
+  border: 1px solid #ded8d0;
+  border-radius: 6px;
+
+  background: #fffdfa;
+
+  color: #211c18;
+
+  font-family: inherit;
+  font-size: 18px;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+.signed-in-select:focus {
+  border-color: #a88c72;
+}
+
+.select-arrow {
+  position: absolute;
+
+  top: 50%;
+  right: 16px;
+
+  transform: translateY(-50%);
+
+  pointer-events: none;
+
+  color: #8a8179;
+}
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.designer-portal-content {
+  width: 100%;
+
+  padding: 40px 35px 60px;
+}
+
+/* =========================================================
+   KPI GRID
+========================================================= */
+
+.portal-kpi-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 0;
+}
+
+.portal-kpi-card {
+  min-height: 138px;
+
+  padding: 22px 24px;
+
+  border: 1px solid #ded8d0;
+  border-radius: 9px;
+
+  background: #fffdfa;
+
+  box-shadow:
+    0 10px 22px rgba(48, 37, 28, 0.06);
+}
+
+.portal-kpi-label {
+  color: #7c726a;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  letter-spacing: 1.8px;
+}
+
+.portal-kpi-value {
+  margin-top: 10px;
+
+  color: #100c09;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 36px;
+  line-height: 1.1;
+}
+
+.portal-kpi-subtitle {
+  margin-top: 5px;
+
+  color: #756b63;
+
+  font-size: 16px;
+}
+
+/* =========================================================
+   COMMON SECTION
+========================================================= */
+
+.portal-section {
+  width: 100%;
+
+  margin-top: 0;
+
+  padding: 32px 28px;
+
+  border: 1px solid #ded8d0;
+  border-radius: 10px;
+
+  background: #fffdfa;
+
+  box-shadow:
+    0 9px 22px rgba(48, 37, 28, 0.05);
+}
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.portal-section-heading h2 {
+  margin: 0;
+
+  color: #100c09;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 30px;
+  font-weight: 500;
+
+  line-height: 1.2;
+}
+
+.portal-section-heading p {
+  margin: 8px 0 0;
+
+  color: #756c64;
+
+  font-size: 20px;
+
+  line-height: 1.4;
+}
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-section {
+  border-radius: 10px 10px 0 0;
+}
+
+.profile-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  column-gap: 70px;
+  row-gap: 27px;
+
+  margin-top: 28px;
+}
+
+.profile-item {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  min-width: 0;
+}
+
+.profile-label {
+  color: #7c7169;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  letter-spacing: 1.8px;
+}
+
+.profile-value {
+  color: #17130f;
+
+  font-size: 20px;
+
+  line-height: 1.35;
+
+  word-break: break-word;
+}
+
+/* =========================================================
+   SKU FORM
+========================================================= */
+
+.upload-section {
+  border-radius: 10px 10px 0 0;
+
+  margin-top: 0;
+}
+
+.sku-form {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 35px 26px;
+
+  margin-top: 36px;
+}
+
+.form-field {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+.form-field label,
+.toggle-label {
+  color: #766c64;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  letter-spacing: 1.9px;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  height: 57px;
+
+  padding: 0 17px;
+
+  border: 1px solid #ddd7cf;
+  border-radius: 7px;
+
+  background: #fffdfa;
+
+  color: #1c1713;
+
+  font-family: inherit;
+
+  font-size: 20px;
+
+  outline: none;
+
+  box-shadow:
+    0 3px 8px rgba(39, 29, 22, 0.08);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: #a98d73;
+
+  box-shadow:
+    0 0 0 3px rgba(169, 141, 115, 0.11);
+}
+
+.form-field input::placeholder {
+  color: #b0a9a2;
+}
+
+/* =========================================================
+   CUSTOM SELECT
+========================================================= */
+
+.custom-select-wrapper {
+  position: relative;
+}
+
+.custom-select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+
+  padding-right: 48px;
+
+  cursor: pointer;
+}
+
+.form-select-arrow {
+  position: absolute;
+
+  right: 17px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #8d857d;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   TOGGLE FIELD
+========================================================= */
+
+.toggle-field {
+  height: 99px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 0 20px;
+
+  border: 1px solid #ddd7cf;
+  border-radius: 7px;
+
+  background: #fffdfa;
+}
+
+.toggle-label {
+  line-height: 1.3;
+}
+
+/* =========================================================
+   TOGGLE
+========================================================= */
+
+.portal-toggle {
+  position: relative;
+
+  width: 58px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #d9d4ce;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.portal-toggle.active {
+  background: #2e241c;
+}
+
+.portal-toggle:focus-visible {
+  outline: 3px solid rgba(46, 36, 28, 0.18);
+  outline-offset: 2px;
+}
+
+.portal-toggle-knob {
+  position: absolute;
+
+  top: 4px;
+  left: 4px;
+
+  width: 26px;
+  height: 26px;
+
+  border-radius: 50%;
+
+  background: #fffaf5;
+
+  box-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.2s ease;
+}
+
+.portal-toggle.active .portal-toggle-knob {
+  transform: translateX(24px);
+}
+
+/* =========================================================
+   SKU PREVIEW
+========================================================= */
+
+.sku-preview {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 22px;
+
+  color: #756b63;
+
+  font-size: 18px;
+
+  overflow-wrap: anywhere;
+}
+
+.sku-preview strong {
+  color: #1c1713;
+
+  font-weight: 500;
+}
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.submit-qa-button {
+  height: 59px;
+
+  margin-top: 29px;
+
+  padding: 0 28px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #2b2019;
+
+  color: #fff;
+
+  font-family: inherit;
+
+  font-size: 19px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 10px rgba(37, 26, 19, 0.14);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.submit-qa-button:hover {
+  background: #1f1712;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 7px 14px rgba(37, 26, 19, 0.18);
+}
+
+.submit-qa-button:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   STOCK SECTION
+========================================================= */
+
+.stock-section {
+  border-radius: 10px 10px 0 0;
+
+  margin-top: 0;
+}
+
+.stock-table-wrapper {
+  width: 100%;
+
+  margin-top: 36px;
+
+  overflow-x: auto;
+}
+
+.stock-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 850px;
+}
+
+.stock-table th {
+  padding: 0 0 15px;
+
+  border-bottom: 1px solid #ddd7cf;
+
+  color: #766c64;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  letter-spacing: 1.8px;
+
+  text-align: left;
+}
+
+.stock-table td {
+  padding: 16px 0;
+
+  border-bottom: 1px solid #e1dbd3;
+
+  color: #191512;
+
+  font-size: 18px;
+
+  vertical-align: middle;
+}
+
+.stock-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.stock-product {
+  min-width: 320px;
+}
+
+.sku-product-name {
+  color: #17130f;
+
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.sku-code {
+  margin-top: 4px;
+
+  color: #756b63;
+
+  font-size: 16px;
+
+  letter-spacing: 0.3px;
+}
+
+.qa-badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 7px 17px;
+
+  border-radius: 999px;
+
+  background: #e6efe7;
+
+  color: #27804c;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  letter-spacing: 0.4px;
+}
+
+/* =========================================================
+   ORDERS
+========================================================= */
+
+.orders-section {
+  border-radius: 10px;
+
+  margin-top: 0;
+}
+
+.orders-empty-state {
+  min-height: 138px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 32px;
+
+  padding: 30px;
+
+  border: 1px dashed #ddd7cf;
+  border-radius: 8px;
+
+  text-align: center;
+}
+
+.orders-empty-state p {
+  margin: 0;
+
+  color: #756c64;
+
+  font-size: 20px;
+}
+
+.storefront-link {
+  display: inline-block;
+
+  margin-top: 14px;
+
+  color: #6f533b;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  text-decoration: none;
+}
+
+.storefront-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+   1600PX+
+========================================================= */
+
+@media (min-width: 1600px) {
+
+  .designer-portal-header {
+    min-height: 190px;
+
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .designer-portal-content {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  .portal-title {
+    font-size: 38px;
+  }
+
+  .portal-subtitle {
+    font-size: 21px;
+  }
+
+  .portal-kpi-card {
+    min-height: 140px;
+  }
+
+  .portal-section {
+    padding: 34px 30px;
+  }
+}
+
+/* =========================================================
+   LAPTOP
+   1200PX - 1599PX
+========================================================= */
+
+@media (max-width: 1599px) {
+
+  .designer-portal-header {
+    align-items: flex-start;
+  }
+
+  .portal-header-right {
+    align-items: flex-start;
+  }
+
+  .portal-search {
+    min-width: 260px;
+  }
+
+  .signed-in-wrapper {
+    min-width: 230px;
+  }
+}
+
+/* =========================================================
+   SMALL LAPTOP
+   1000PX - 1199PX
+========================================================= */
+
+@media (max-width: 1199px) {
+
+  .designer-portal-header {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 25px;
+  }
+
+  .portal-header-right {
+    justify-content: flex-start;
+
+    align-items: center;
+  }
+
+  .portal-kpi-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .profile-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .sku-form {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   TABLET
+   768PX - 999PX
+========================================================= */
+
+@media (max-width: 999px) {
+
+  .designer-portal-content {
+    padding: 28px 24px 50px;
+  }
+
+  .designer-portal-header {
+    padding: 25px 24px;
+  }
+
+  .portal-header-left {
+    gap: 22px;
+  }
+
+  .portal-logo {
+    width: 60px;
+    min-width: 60px;
+  }
+
+  .portal-logo img {
+    width: 60px;
+  }
+
+  .portal-title {
+    font-size: 32px;
+  }
+
+  .portal-subtitle {
+    font-size: 18px;
+  }
+
+  .portal-header-right {
+    display: grid;
+
+    grid-template-columns:
+      1fr 1fr;
+
+    align-items: end;
+  }
+
+  .portal-search {
+    min-width: 0;
+  }
+
+  .portal-user {
+    min-width: 0;
+  }
+
+  .signed-in-wrapper {
+    grid-column: 1 / -1;
+
+    max-width: 100%;
+  }
+
+  .profile-grid {
+    column-gap: 35px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   767PX AND BELOW
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .designer-portal-header {
+    padding: 22px 18px;
+
+    gap: 22px;
+  }
+
+  .portal-header-left {
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .portal-logo {
+    width: 50px;
+    min-width: 50px;
+  }
+
+  .portal-logo img {
+    width: 50px;
+  }
+
+  .portal-back-link {
+    margin-bottom: 13px;
+
+    font-size: 12px;
+
+    letter-spacing: 1.2px;
+  }
+
+  .portal-title {
+    font-size: 27px;
+  }
+
+  .portal-title-number {
+    margin-right: 5px;
+  }
+
+  .portal-subtitle {
+    margin-top: 8px;
+
+    font-size: 15px;
+  }
+
+  .portal-header-right {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    width: 100%;
+  }
+
+  .portal-search {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .portal-user {
+    width: 100%;
+
+    justify-content: flex-start;
+  }
+
+  .signed-in-wrapper {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .designer-portal-content {
+    padding: 20px 14px 40px;
+  }
+
+  /* KPI */
+
+  .portal-kpi-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .portal-kpi-card {
+    min-height: 120px;
+
+    padding: 20px;
+  }
+
+  .portal-kpi-value {
+    font-size: 32px;
+  }
+
+  /* SECTIONS */
+
+  .portal-section {
+    padding: 24px 18px;
+  }
+
+  .portal-section-heading h2 {
+    font-size: 27px;
+  }
+
+  .portal-section-heading p {
+    font-size: 17px;
+  }
+
+  /* PROFILE */
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+
+    row-gap: 20px;
+
+    margin-top: 25px;
+  }
+
+  /* FORM */
+
+  .sku-form {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+
+    margin-top: 28px;
+  }
+
+  .form-field input,
+  .form-field select {
+    height: 54px;
+
+    font-size: 17px;
+  }
+
+  .toggle-field {
+    min-height: 86px;
+
+    height: auto;
+
+    padding: 18px;
+  }
+
+  .toggle-label {
+    font-size: 13px;
+  }
+
+  .sku-preview {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    font-size: 16px;
+  }
+
+  .submit-qa-button {
+    width: 100%;
+  }
+
+  /* STOCK */
+
+  .stock-table-wrapper {
+    overflow-x: visible;
+  }
+
+  .stock-table {
+    min-width: 0;
+  }
+
+  .stock-table thead {
+    display: none;
+  }
+
+  .stock-table,
+  .stock-table tbody,
+  .stock-table tr,
+  .stock-table td {
+    display: block;
+
+    width: 100%;
+  }
+
+  .stock-table tr {
+    padding: 18px 0;
+
+    border-bottom: 1px solid #ddd7cf;
+  }
+
+  .stock-table tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  .stock-table td {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 8px 0;
+
+    border: none;
+
+    font-size: 16px;
+  }
+
+  .stock-table td::before {
+    content: attr(data-label);
+
+    color: #766c64;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: 1.3px;
+  }
+
+  .stock-table td[data-label="SKU"] {
+    display: block;
+
+    padding-bottom: 14px;
+  }
+
+  .stock-table td[data-label="SKU"]::before {
+    display: none;
+  }
+
+  .sku-product-name {
+    font-size: 19px;
+  }
+
+  .sku-code {
+    font-size: 14px;
+
+    word-break: break-all;
+  }
+
+  /* ORDERS */
+
+  .orders-empty-state {
+    min-height: 150px;
+
+    padding: 22px 15px;
+  }
+
+  .orders-empty-state p {
+    font-size: 17px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .portal-title {
+    font-size: 24px;
+  }
+
+  .portal-subtitle {
+    font-size: 14px;
+  }
+
+  .portal-user-name {
+    font-size: 16px;
+  }
+
+  .portal-search {
+    font-size: 16px;
+  }
+
+  .portal-kpi-label {
+    font-size: 12px;
+  }
+
+  .portal-section {
+    padding: 21px 15px;
+  }
+
+  .portal-section-heading h2 {
+    font-size: 24px;
+  }
+
+  .portal-section-heading p {
+    font-size: 16px;
+  }
+
+  .profile-value {
+    font-size: 18px;
+  }
+}

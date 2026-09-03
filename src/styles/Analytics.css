@@ -1,0 +1,1347 @@
+/* =========================================================
+   BI DASHBOARDS
+   ZENVE FASHION
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.bi-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f8f7f2;
+
+  color: #17120f;
+
+  font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  overflow-x: hidden;
+}
+
+.bi-page *,
+.bi-page *::before,
+.bi-page *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.bi-header {
+  width: 100%;
+
+  background: #fffdfa;
+
+  border-bottom: 1px solid #ded9d0;
+}
+
+.bi-header-inner {
+  width: 100%;
+
+  min-height: 184px;
+
+  display: grid;
+
+  grid-template-columns:
+    105px
+    minmax(450px, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding:
+    30px
+    48px
+    28px
+    40px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.bi-logo-wrapper {
+  width: 90px;
+
+  height: 105px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.bi-logo {
+  width: 78px;
+
+  max-height: 100px;
+
+  object-fit: contain;
+}
+
+.bi-logo-fallback {
+  width: 78px;
+  height: 100px;
+
+  display: none;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  text-align: center;
+
+  color: #2b211a;
+}
+
+.fallback-z {
+  font-family: Georgia, serif;
+
+  font-size: 48px;
+
+  font-style: italic;
+
+  line-height: 40px;
+}
+
+.fallback-text {
+  font-family: Georgia, serif;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+.fallback-text small {
+  display: block;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 6px;
+
+  letter-spacing: 2px;
+
+  margin-top: 3px;
+}
+
+
+/* =========================================================
+   TITLE AREA
+========================================================= */
+
+.bi-title-area {
+  align-self: center;
+}
+
+.bi-back {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 20px;
+
+  color: #746b63;
+
+  font-size: 16px;
+
+  letter-spacing: 1.5px;
+
+  font-weight: 400;
+}
+
+.back-arrow {
+  font-size: 21px;
+
+  line-height: 1;
+}
+
+.bi-title-area h1 {
+  margin: 0;
+
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 8px;
+
+  color: #0e0b09;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 36px;
+
+  font-weight: 400;
+
+  line-height: 1.05;
+}
+
+.layer-number {
+  color: #d7924d;
+
+  font-size: 34px;
+}
+
+.bi-title-area p {
+  margin: 12px 0 0;
+
+  color: #746b63;
+
+  font-size: 20px;
+
+  line-height: 1.4;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.bi-header-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+}
+
+.bi-search-box,
+.bi-user-box {
+  height: 50px;
+
+  border: 1px solid #ddd8cf;
+
+  border-radius: 7px;
+
+  background: #fbfaf7;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.bi-search-box {
+  width: 300px;
+
+  padding: 0 13px;
+}
+
+.bi-user-box {
+  min-width: 305px;
+
+  padding: 0 13px;
+}
+
+.bi-icon {
+  width: 23px;
+  height: 23px;
+
+  flex-shrink: 0;
+
+  fill: none;
+
+  stroke: #746d66;
+
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+.bi-search-box input {
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  padding: 0 12px;
+
+  color: #18130f;
+
+  font-size: 20px;
+
+  font-family: inherit;
+}
+
+.bi-search-box input::placeholder {
+  color: #746d66;
+
+  opacity: 1;
+}
+
+.keyboard-shortcut {
+  flex-shrink: 0;
+
+  padding: 3px 7px;
+
+  border: 1px solid #ddd8cf;
+
+  border-radius: 6px;
+
+  color: #756d65;
+
+  font-size: 14px;
+
+  line-height: 1;
+}
+
+.bi-user-box {
+  gap: 12px;
+}
+
+.bi-user-name {
+  color: #17120f;
+
+  font-size: 20px;
+
+  white-space: nowrap;
+}
+
+.admin-badge {
+  margin-left: auto;
+
+  padding:
+    6px
+    14px;
+
+  border-radius: 20px;
+
+  background: #f1e4d2;
+
+  color: #17120f;
+
+  font-size: 16px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.bi-main {
+  width: 100%;
+
+  padding:
+    42px
+    34px
+    60px;
+}
+
+
+/* =========================================================
+   KPI CARDS
+========================================================= */
+
+.bi-kpi-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, minmax(0, 1fr));
+
+  gap: 17px;
+
+  margin-bottom: 0;
+}
+
+.bi-kpi-card {
+  min-height: 137px;
+
+  background: #fffdfa;
+
+  border: 1px solid #ddd8cf;
+
+  border-radius: 10px;
+
+  padding:
+    20px
+    23px;
+
+  box-shadow:
+    0 2px 4px rgba(45, 35, 27, 0.03),
+    0 15px 30px rgba(45, 35, 27, 0.04);
+}
+
+.bi-kpi-label {
+  color: #81776f;
+
+  font-size: 16px;
+
+  letter-spacing: 2px;
+
+  line-height: 1.2;
+
+  margin-bottom: 12px;
+}
+
+.bi-kpi-value {
+  color: #100c09;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 37px;
+
+  line-height: 1;
+
+  font-weight: 400;
+}
+
+.bi-kpi-description {
+  margin-top: 8px;
+
+  color: #766c64;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   CHART GRID
+========================================================= */
+
+.bi-chart-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 34px;
+
+  margin-top: 0;
+}
+
+
+/* =========================================================
+   COMMON PANEL
+========================================================= */
+
+.bi-panel {
+  background: #fffdfa;
+
+  border: 1px solid #ddd8cf;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 2px 5px rgba(50, 40, 30, 0.025),
+    0 16px 35px rgba(50, 40, 30, 0.04);
+}
+
+.bi-panel h2 {
+  margin: 0;
+
+  color: #100c09;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 28px;
+
+  line-height: 1.2;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   GMV PANEL
+========================================================= */
+
+.gmv-panel {
+  min-height: 506px;
+
+  padding:
+    34px
+    30px;
+}
+
+.gmv-panel h2 {
+  margin-bottom: 27px;
+}
+
+.bi-empty-box {
+  width: 100%;
+
+  min-height: 125px;
+
+  border: 1px dashed #ddd7ce;
+
+  border-radius: 7px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  color: #746b63;
+
+  font-size: 20px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   INVENTORY PANEL
+========================================================= */
+
+.inventory-panel {
+  min-height: 506px;
+
+  padding:
+    34px
+    30px;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.inventory-panel h2 {
+  margin-bottom: 10px;
+}
+
+.donut-wrapper {
+  flex: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding-top: 10px;
+}
+
+.donut-chart {
+  width: 278px;
+
+  height: 278px;
+
+  border-radius: 50%;
+
+  background:
+    conic-gradient(
+      #2b2119 0deg 359deg,
+      #ffffff 359deg 360deg
+    );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.donut-hole {
+  width: 162px;
+
+  height: 162px;
+
+  border-radius: 50%;
+
+  background: #fffdfa;
+}
+
+.donut-legend {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  margin-top: 4px;
+
+  color: #766c64;
+
+  font-size: 17px;
+}
+
+.legend-dot {
+  width: 13px;
+
+  height: 13px;
+
+  border-radius: 50%;
+
+  background: #2b2119;
+}
+
+
+/* =========================================================
+   SKU PERFORMANCE
+========================================================= */
+
+.sku-panel {
+  margin-top: 0;
+
+  padding:
+    35px
+    32px
+    25px;
+}
+
+.bi-section-heading h2 {
+  margin-bottom: 9px;
+}
+
+.bi-section-heading p {
+  margin: 0;
+
+  color: #756c64;
+
+  font-size: 20px;
+
+  line-height: 1.45;
+}
+
+.sku-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  margin-top: 28px;
+}
+
+.sku-table {
+  width: 100%;
+
+  min-width: 900px;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+}
+
+.sku-table th {
+  padding:
+    14px
+    0;
+
+  border-bottom: 1px solid #dcd6cd;
+
+  text-align: left;
+
+  color: #776e67;
+
+  font-size: 16px;
+
+  letter-spacing: 2px;
+
+  font-weight: 500;
+}
+
+.sku-table th:first-child {
+  width: 42%;
+}
+
+.sku-table th:nth-child(2) {
+  width: 10%;
+}
+
+.sku-table th:nth-child(3) {
+  width: 10%;
+}
+
+.sku-table th:nth-child(4) {
+  width: 12%;
+}
+
+.sku-table th:nth-child(5) {
+  width: 14%;
+}
+
+.sku-table th:nth-child(6) {
+  width: 12%;
+}
+
+.sku-table td {
+  padding:
+    19px
+    0;
+
+  border-bottom: 1px solid #ded9d0;
+
+  color: #11100e;
+
+  font-size: 20px;
+
+  vertical-align: middle;
+}
+
+.sku-name {
+  color: #11100e;
+
+  font-size: 20px;
+
+  line-height: 1.25;
+}
+
+.sku-code {
+  margin-top: 4px;
+
+  color: #746b63;
+
+  font-size: 17px;
+
+  line-height: 1.2;
+}
+
+.sku-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   REPORT EXPORT
+========================================================= */
+
+.reports-panel {
+  margin-top: 10px;
+
+  padding:
+    34px
+    32px;
+}
+
+.reports-header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.reports-header h2 {
+  margin-bottom: 9px;
+}
+
+.reports-header p {
+  margin: 0;
+
+  color: #746b63;
+
+  font-size: 20px;
+
+  line-height: 1.4;
+}
+
+.export-full-button {
+  min-width: 280px;
+
+  height: 58px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #2b211a;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  padding:
+    0
+    22px;
+
+  font-family: inherit;
+
+  font-size: 19px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 3px 5px rgba(40, 30, 22, 0.15);
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
+}
+
+.export-full-button:hover {
+  background: #1f1813;
+
+  transform: translateY(-1px);
+}
+
+.file-download-icon {
+  width: 24px;
+
+  height: 24px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.8;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+.reports-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 13px;
+
+  margin-top: 27px;
+}
+
+.report-card {
+  min-height: 69px;
+
+  border: 1px solid #ded8cf;
+
+  border-radius: 7px;
+
+  background: #fffdfa;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding:
+    0
+    19px;
+
+  cursor: pointer;
+
+  color: #15110e;
+
+  font-family: inherit;
+
+  text-align: left;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.report-card:hover {
+  background: #f8f5ef;
+
+  border-color: #cfc7bc;
+}
+
+.report-information {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  min-width: 0;
+}
+
+.report-name {
+  color: #15110e;
+
+  font-size: 20px;
+
+  white-space: nowrap;
+}
+
+.report-rows {
+  color: #776e67;
+
+  font-size: 17px;
+
+  white-space: nowrap;
+}
+
+.download-icon {
+  width: 23px;
+
+  height: 23px;
+
+  flex-shrink: 0;
+
+  fill: none;
+
+  stroke: #746c64;
+
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   TOP MOVERS
+========================================================= */
+
+.movers-panel {
+  margin-top: 0;
+
+  min-height: 280px;
+
+  padding:
+    35px
+    32px;
+}
+
+.movers-panel h2 {
+  margin-bottom: 31px;
+}
+
+.movers-empty {
+  min-height: 140px;
+
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1800px) {
+
+  .bi-header-inner {
+    padding-left: 52px;
+
+    padding-right: 52px;
+  }
+
+  .bi-main {
+    padding-left: 36px;
+
+    padding-right: 36px;
+  }
+
+  .bi-kpi-card {
+    min-height: 142px;
+  }
+
+  .bi-title-area h1 {
+    font-size: 39px;
+  }
+
+  .bi-title-area p {
+    font-size: 21px;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1400px) {
+
+  .bi-header-inner {
+    grid-template-columns:
+      85px
+      minmax(350px, 1fr)
+      auto;
+
+    padding:
+      28px
+      30px;
+  }
+
+  .bi-header-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .bi-search-box,
+  .bi-user-box {
+    width: 300px;
+  }
+
+  .bi-main {
+    padding:
+      35px
+      25px
+      50px;
+  }
+
+  .bi-kpi-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+  }
+
+  .bi-chart-grid {
+    gap: 20px;
+  }
+
+  .reports-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .bi-header-inner {
+    display: grid;
+
+    grid-template-columns:
+      75px
+      1fr;
+
+    gap: 10px 20px;
+
+    padding:
+      25px;
+  }
+
+  .bi-logo-wrapper {
+    grid-row: span 2;
+
+    width: 70px;
+  }
+
+  .bi-title-area {
+    grid-column: 2;
+  }
+
+  .bi-header-actions {
+    grid-column: 2;
+
+    flex-direction: row;
+
+    justify-content: flex-start;
+
+    margin-top: 10px;
+  }
+
+  .bi-search-box,
+  .bi-user-box {
+    width: auto;
+
+    flex: 1;
+  }
+
+  .bi-kpi-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .bi-chart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gmv-panel,
+  .inventory-panel {
+    min-height: 430px;
+  }
+
+  .reports-header {
+    flex-direction: column;
+  }
+
+  .export-full-button {
+    width: 100%;
+  }
+
+  .reports-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .bi-header-inner {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 15px;
+
+    padding:
+      20px
+      18px;
+  }
+
+  .bi-logo-wrapper {
+    width: 70px;
+
+    height: 70px;
+
+    align-self: flex-start;
+  }
+
+  .bi-logo {
+    width: 65px;
+  }
+
+  .bi-title-area {
+    width: 100%;
+  }
+
+  .bi-back {
+    margin-bottom: 13px;
+
+    font-size: 13px;
+  }
+
+  .bi-title-area h1 {
+    font-size: 29px;
+  }
+
+  .layer-number {
+    font-size: 28px;
+  }
+
+  .bi-title-area p {
+    font-size: 16px;
+
+    margin-top: 8px;
+  }
+
+  .bi-header-actions {
+    width: 100%;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin: 0;
+  }
+
+  .bi-search-box,
+  .bi-user-box {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .bi-search-box input {
+    font-size: 17px;
+  }
+
+  .bi-user-name {
+    font-size: 17px;
+  }
+
+  .bi-main {
+    padding:
+      20px
+      14px
+      40px;
+  }
+
+  .bi-kpi-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .bi-kpi-card {
+    min-height: 115px;
+
+    padding:
+      18px
+      20px;
+  }
+
+  .bi-kpi-value {
+    font-size: 32px;
+  }
+
+  .bi-chart-grid {
+    gap: 12px;
+  }
+
+  .gmv-panel,
+  .inventory-panel {
+    min-height: 380px;
+
+    padding:
+      25px
+      20px;
+  }
+
+  .bi-panel h2 {
+    font-size: 25px;
+  }
+
+  .bi-empty-box {
+    font-size: 17px;
+  }
+
+  .donut-chart {
+    width: 220px;
+
+    height: 220px;
+  }
+
+  .donut-hole {
+    width: 128px;
+
+    height: 128px;
+  }
+
+  .sku-panel,
+  .reports-panel,
+  .movers-panel {
+    padding:
+      25px
+      20px;
+  }
+
+  .bi-section-heading p,
+  .reports-header p {
+    font-size: 17px;
+  }
+
+  .sku-table-wrapper {
+    margin-top: 20px;
+
+    margin-left: -5px;
+
+    margin-right: -5px;
+  }
+
+  .sku-table {
+    min-width: 850px;
+  }
+
+  .reports-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .report-card {
+    min-height: 62px;
+  }
+
+  .report-name {
+    font-size: 17px;
+  }
+
+  .report-rows {
+    font-size: 15px;
+  }
+
+  .movers-panel {
+    min-height: 240px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .bi-title-area h1 {
+    font-size: 26px;
+  }
+
+  .layer-number {
+    font-size: 25px;
+  }
+
+  .bi-title-area p {
+    font-size: 15px;
+  }
+
+  .admin-badge {
+    padding:
+      5px
+      10px;
+
+    font-size: 14px;
+  }
+
+  .bi-kpi-label {
+    font-size: 14px;
+  }
+
+  .bi-kpi-value {
+    font-size: 30px;
+  }
+
+  .donut-chart {
+    width: 190px;
+
+    height: 190px;
+  }
+
+  .donut-hole {
+    width: 112px;
+
+    height: 112px;
+  }
+
+  .export-full-button {
+    font-size: 17px;
+  }
+}

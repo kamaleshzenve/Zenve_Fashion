@@ -1,0 +1,1218 @@
+/* =========================================================
+   ZENVE FASHION
+   07 - OMS
+   RESPONSIVE STYLES
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL PAGE
+========================================================= */
+
+.oms-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f8f7f2;
+  color: #17130f;
+
+  font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.oms-header {
+  width: 100%;
+  min-height: 210px;
+
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+
+  padding:
+    34px
+    48px
+    34px
+    52px;
+
+  background: #fffdf9;
+
+  border-bottom: 1px solid #dedbd4;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.oms-logo-wrapper {
+  width: 72px;
+  min-width: 72px;
+
+  height: 110px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 23px;
+  margin-right: 45px;
+}
+
+.oms-logo {
+  width: 72px;
+  height: auto;
+
+  max-height: 100px;
+
+  object-fit: contain;
+}
+
+.oms-logo-fallback {
+  width: 72px;
+
+  display: none;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #1d1712;
+
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.oms-logo-fallback span {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.oms-logo-fallback small {
+  margin-top: 2px;
+
+  font-size: 7px;
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   HEADER CONTENT
+========================================================= */
+
+.oms-header-content {
+  flex: 1;
+
+  min-width: 0;
+
+  padding-top: 1px;
+}
+
+
+/* =========================================================
+   BACK LINK
+========================================================= */
+
+.oms-back-link {
+  appearance: none;
+  border: 0;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 0;
+  margin: 0 0 22px;
+
+  color: #756d65;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  letter-spacing: 1.5px;
+
+  cursor: pointer;
+}
+
+.oms-back-link svg {
+  flex-shrink: 0;
+}
+
+.oms-back-link:hover {
+  color: #1c1713;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.oms-title-row {
+  margin: 0;
+  padding: 0;
+}
+
+.oms-title-row h1 {
+  margin: 0;
+
+  color: #090806;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 42px;
+  line-height: 1.05;
+  font-weight: 500;
+
+  letter-spacing: -1.5px;
+}
+
+.oms-number {
+  color: #c78c50;
+
+  margin-right: 7px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.oms-subtitle {
+  margin: 13px 0 0;
+
+  color: #756b63;
+
+  font-size: 22px;
+  line-height: 1.35;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.oms-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  margin-top: 43px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.oms-search-box {
+  height: 54px;
+  width: 332px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 12px 0 18px;
+
+  background: #fbfaf7;
+
+  border: 1px solid #ddd9d1;
+  border-radius: 7px;
+
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.02);
+
+  box-sizing: border-box;
+}
+
+.oms-search-box svg {
+  color: #716a63;
+
+  flex-shrink: 0;
+}
+
+.oms-search-box input {
+  width: 100%;
+
+  min-width: 0;
+
+  border: 0;
+  outline: none;
+
+  background: transparent;
+
+  color: #17130f;
+
+  font-family: inherit;
+  font-size: 21px;
+}
+
+.oms-search-box input::placeholder {
+  color: #746c64;
+  opacity: 1;
+}
+
+.oms-shortcut {
+  flex-shrink: 0;
+
+  min-width: 40px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 7px;
+
+  border: 1px solid #dedbd4;
+  border-radius: 7px;
+
+  color: #716b64;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   USER
+========================================================= */
+
+.oms-user-box {
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 0 18px;
+
+  background: #fbfaf7;
+
+  border: 1px solid #ddd9d1;
+  border-radius: 7px;
+
+  box-sizing: border-box;
+
+  white-space: nowrap;
+}
+
+.oms-user-box svg {
+  color: #716a63;
+
+  flex-shrink: 0;
+}
+
+.oms-user-name {
+  color: #17130f;
+
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.oms-admin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 82px;
+  height: 34px;
+
+  padding: 0 15px;
+
+  border-radius: 20px;
+
+  background: #f2e4d3;
+
+  color: #18130e;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.oms-main {
+  width: 100%;
+
+  padding:
+    46px
+    52px
+    50px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   STAT GRID
+========================================================= */
+
+.oms-stat-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 19px;
+
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   STAT CARD
+========================================================= */
+
+.oms-stat-card {
+  min-height: 153px;
+
+  padding:
+    24px
+    26px
+    20px;
+
+  background: #fffdf9;
+
+  border: 1px solid #dedbd4;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 11px 24px rgba(42, 34, 25, 0.07);
+
+  box-sizing: border-box;
+}
+
+.oms-stat-label {
+  color: #756c64;
+
+  font-size: 17px;
+  font-weight: 400;
+
+  letter-spacing: 2px;
+
+  line-height: 1.2;
+}
+
+.oms-stat-number {
+  margin-top: 13px;
+
+  color: #090806;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 43px;
+  line-height: 1;
+
+  font-weight: 400;
+}
+
+.oms-gmv {
+  font-size: 42px;
+}
+
+.oms-stat-description {
+  margin-top: 7px;
+
+  color: #756c64;
+
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+
+/* =========================================================
+   LIFECYCLE CARD
+========================================================= */
+
+.oms-lifecycle-card {
+  width: 100%;
+
+  min-height: 315px;
+
+  margin-top: 0;
+
+  padding:
+    37px
+    33px
+    32px;
+
+  background: #fffdf9;
+
+  border: 1px solid #dedbd4;
+  border-radius: 10px;
+
+  box-shadow:
+    0 11px 24px rgba(42, 34, 25, 0.07);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.oms-section-heading h2 {
+  margin: 0;
+
+  color: #0c0907;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 32px;
+  line-height: 1.2;
+
+  font-weight: 500;
+
+  letter-spacing: -0.5px;
+}
+
+.oms-section-heading p {
+  margin: 12px 0 0;
+
+  color: #756c64;
+
+  font-size: 21px;
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.oms-empty-state {
+  width: 100%;
+
+  min-height: 140px;
+
+  margin-top: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px dashed #ded9d0;
+  border-radius: 8px;
+
+  box-sizing: border-box;
+}
+
+.oms-empty-state p {
+  margin: 0;
+
+  color: #756c64;
+
+  font-size: 22px;
+  line-height: 1.4;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   LARGE LAPTOP
+   1200px - 1599px
+========================================================= */
+
+@media (max-width: 1599px) {
+
+  .oms-header {
+    padding-left: 42px;
+    padding-right: 42px;
+  }
+
+  .oms-logo-wrapper {
+    margin-right: 35px;
+  }
+
+  .oms-search-box {
+    width: 300px;
+  }
+
+  .oms-user-name {
+    font-size: 19px;
+  }
+
+  .oms-main {
+    padding-left: 42px;
+    padding-right: 42px;
+  }
+
+  .oms-stat-card {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+}
+
+
+/* =========================================================
+   LAPTOP
+   1024px - 1199px
+========================================================= */
+
+@media (max-width: 1199px) {
+
+  .oms-header {
+    min-height: 190px;
+
+    padding:
+      28px
+      30px
+      30px;
+  }
+
+  .oms-logo-wrapper {
+    width: 62px;
+    min-width: 62px;
+
+    margin-right: 27px;
+  }
+
+  .oms-logo {
+    width: 62px;
+  }
+
+  .oms-back-link {
+    margin-bottom: 16px;
+
+    font-size: 14px;
+  }
+
+  .oms-title-row h1 {
+    font-size: 36px;
+  }
+
+  .oms-subtitle {
+    font-size: 18px;
+  }
+
+  .oms-header-actions {
+    gap: 9px;
+    margin-top: 35px;
+  }
+
+  .oms-search-box {
+    width: 270px;
+    height: 50px;
+  }
+
+  .oms-search-box input {
+    font-size: 17px;
+  }
+
+  .oms-user-box {
+    height: 50px;
+    padding: 0 13px;
+  }
+
+  .oms-user-name {
+    font-size: 17px;
+  }
+
+  .oms-admin {
+    min-width: 68px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .oms-main {
+    padding:
+      36px
+      30px
+      40px;
+  }
+
+  .oms-stat-grid {
+    gap: 14px;
+  }
+
+  .oms-stat-card {
+    min-height: 140px;
+  }
+
+  .oms-stat-label {
+    font-size: 14px;
+  }
+
+  .oms-stat-number {
+    font-size: 38px;
+  }
+
+  .oms-stat-description {
+    font-size: 15px;
+  }
+
+  .oms-lifecycle-card {
+    padding:
+      30px
+      27px
+      28px;
+  }
+
+  .oms-section-heading h2 {
+    font-size: 28px;
+  }
+
+  .oms-section-heading p {
+    font-size: 18px;
+  }
+
+  .oms-empty-state p {
+    font-size: 19px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   768px - 1023px
+========================================================= */
+
+@media (max-width: 1023px) {
+
+  .oms-header {
+    min-height: auto;
+
+    display: grid;
+
+    grid-template-columns: 60px 1fr;
+
+    column-gap: 20px;
+
+    padding:
+      27px
+      28px
+      25px;
+  }
+
+  .oms-logo-wrapper {
+    width: 60px;
+    min-width: 60px;
+
+    height: 90px;
+
+    margin: 22px 0 0;
+  }
+
+  .oms-logo {
+    width: 60px;
+  }
+
+  .oms-header-content {
+    width: 100%;
+  }
+
+  .oms-header-actions {
+    grid-column: 2;
+
+    width: 100%;
+
+    margin-top: 22px;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(220px, auto);
+  }
+
+  .oms-search-box {
+    width: 100%;
+  }
+
+  .oms-user-box {
+    width: 100%;
+  }
+
+  .oms-main {
+    padding:
+      28px
+      28px
+      35px;
+  }
+
+  .oms-stat-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+  }
+
+  .oms-lifecycle-card {
+    margin-top: 0;
+  }
+}
+
+
+/* =========================================================
+   MOBILE LARGE
+   600px - 767px
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .oms-header {
+    display: block;
+
+    padding:
+      22px
+      20px
+      25px;
+  }
+
+  .oms-logo-wrapper {
+    width: 65px;
+    min-width: 65px;
+
+    height: 70px;
+
+    margin:
+      0
+      0
+      10px;
+  }
+
+  .oms-logo {
+    width: 65px;
+  }
+
+  .oms-back-link {
+    margin-bottom: 14px;
+
+    font-size: 13px;
+    letter-spacing: 1.2px;
+  }
+
+  .oms-title-row h1 {
+    font-size: 32px;
+
+    letter-spacing: -1px;
+  }
+
+  .oms-subtitle {
+    margin-top: 10px;
+
+    font-size: 17px;
+
+    line-height: 1.4;
+  }
+
+  .oms-header-actions {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 10px;
+
+    margin-top: 22px;
+  }
+
+  .oms-search-box {
+    width: 100%;
+    height: 50px;
+  }
+
+  .oms-user-box {
+    width: 100%;
+    height: 50px;
+  }
+
+  .oms-main {
+    padding:
+      22px
+      20px
+      30px;
+  }
+
+  .oms-stat-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .oms-stat-card {
+    min-height: 125px;
+
+    padding:
+      20px
+      21px;
+  }
+
+  .oms-stat-label {
+    font-size: 14px;
+  }
+
+  .oms-stat-number {
+    margin-top: 11px;
+
+    font-size: 36px;
+  }
+
+  .oms-stat-description {
+    font-size: 15px;
+  }
+
+  .oms-lifecycle-card {
+    margin-top: 0;
+
+    padding:
+      25px
+      20px
+      22px;
+  }
+
+  .oms-section-heading h2 {
+    font-size: 27px;
+  }
+
+  .oms-section-heading p {
+    margin-top: 10px;
+
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .oms-empty-state {
+    min-height: 135px;
+
+    margin-top: 23px;
+
+    padding: 20px;
+  }
+
+  .oms-empty-state p {
+    font-size: 17px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE SMALL
+   480px and below
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .oms-header {
+    padding:
+      18px
+      15px
+      21px;
+  }
+
+  .oms-logo-wrapper {
+    width: 58px;
+    min-width: 58px;
+
+    height: 60px;
+  }
+
+  .oms-logo {
+    width: 58px;
+  }
+
+  .oms-back-link {
+    font-size: 12px;
+
+    gap: 6px;
+  }
+
+  .oms-back-link svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .oms-title-row h1 {
+    font-size: 28px;
+  }
+
+  .oms-number {
+    margin-right: 5px;
+  }
+
+  .oms-subtitle {
+    font-size: 15px;
+  }
+
+  .oms-search-box {
+    height: 47px;
+
+    padding-left: 13px;
+  }
+
+  .oms-search-box input {
+    font-size: 16px;
+  }
+
+  .oms-shortcut {
+    display: none;
+  }
+
+  .oms-user-box {
+    height: 47px;
+
+    padding:
+      0
+      13px;
+
+    gap: 9px;
+  }
+
+  .oms-user-name {
+    font-size: 16px;
+  }
+
+  .oms-admin {
+    min-width: 58px;
+
+    height: 28px;
+
+    padding:
+      0
+      10px;
+
+    font-size: 13px;
+  }
+
+  .oms-main {
+    padding:
+      17px
+      15px
+      25px;
+  }
+
+  .oms-stat-card {
+    min-height: 116px;
+
+    padding:
+      18px
+      18px;
+  }
+
+  .oms-stat-label {
+    font-size: 12px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .oms-stat-number {
+    font-size: 34px;
+  }
+
+  .oms-stat-description {
+    font-size: 14px;
+  }
+
+  .oms-lifecycle-card {
+    padding:
+      22px
+      17px
+      20px;
+  }
+
+  .oms-section-heading h2 {
+    font-size: 24px;
+  }
+
+  .oms-section-heading p {
+    font-size: 15px;
+
+    line-height: 1.55;
+  }
+
+  .oms-empty-state {
+    min-height: 125px;
+
+    padding:
+      15px;
+  }
+
+  .oms-empty-state p {
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   360px and below
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .oms-title-row h1 {
+    font-size: 25px;
+  }
+
+  .oms-subtitle {
+    font-size: 14px;
+  }
+
+  .oms-user-name {
+    font-size: 14px;
+  }
+
+  .oms-admin {
+    min-width: 52px;
+
+    padding:
+      0
+      8px;
+
+    font-size: 12px;
+  }
+
+  .oms-section-heading h2 {
+    font-size: 22px;
+  }
+
+  .oms-section-heading p {
+    font-size: 14px;
+  }
+
+  .oms-empty-state p {
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   LARGE 2K / 4K SCREENS
+========================================================= */
+
+@media (min-width: 2000px) {
+
+  .oms-header {
+    min-height: 240px;
+
+    padding:
+      42px
+      65px
+      40px;
+  }
+
+  .oms-logo-wrapper {
+    width: 82px;
+    min-width: 82px;
+
+    margin-right: 52px;
+  }
+
+  .oms-logo {
+    width: 82px;
+  }
+
+  .oms-title-row h1 {
+    font-size: 48px;
+  }
+
+  .oms-subtitle {
+    font-size: 24px;
+  }
+
+  .oms-search-box {
+    width: 370px;
+    height: 58px;
+  }
+
+  .oms-user-box {
+    height: 58px;
+  }
+
+  .oms-user-name {
+    font-size: 22px;
+  }
+
+  .oms-main {
+    padding:
+      58px
+      65px
+      65px;
+  }
+
+  .oms-stat-card {
+    min-height: 175px;
+
+    padding:
+      28px
+      30px;
+  }
+
+  .oms-stat-label {
+    font-size: 18px;
+  }
+
+  .oms-stat-number {
+    font-size: 48px;
+  }
+
+  .oms-stat-description {
+    font-size: 20px;
+  }
+
+  .oms-lifecycle-card {
+    padding:
+      42px
+      38px
+      38px;
+
+    min-height: 350px;
+  }
+
+  .oms-section-heading h2 {
+    font-size: 35px;
+  }
+
+  .oms-section-heading p {
+    font-size: 23px;
+  }
+
+  .oms-empty-state {
+    min-height: 155px;
+  }
+
+  .oms-empty-state p {
+    font-size: 23px;
+  }
+}

@@ -1,0 +1,2160 @@
+/* =========================================================
+   ZENVE FASHION
+   CATALOGUE QA
+   RESPONSIVE CSS
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+
+  font-family:
+    Inter,
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  background: #f7f5f0;
+  color: #171411;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  overflow-x: hidden;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+input {
+  outline: none;
+}
+
+button,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.catalogue-qa-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f7f5f0;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.cqa-header {
+  width: 100%;
+
+  background: #fcfbf8;
+
+  border-bottom: 1px solid #dedbd4;
+}
+
+.cqa-header-inner {
+  width: 100%;
+
+  min-height: 190px;
+
+  display: flex;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.cqa-brand {
+  width: 120px;
+
+  flex: 0 0 120px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fcfbf8;
+}
+
+.cqa-logo-placeholder {
+  width: 76px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #171411;
+
+  text-align: center;
+}
+
+.cqa-logo-mark {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 19px;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
+}
+
+.cqa-logo-placeholder span {
+  margin-top: -2px;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  color: #6f665d;
+}
+
+
+/* =========================================================
+   HEADER MAIN
+========================================================= */
+
+.cqa-header-main {
+  flex: 1;
+
+  min-width: 0;
+
+  padding:
+    33px
+    clamp(24px, 3vw, 54px)
+    28px
+    22px;
+}
+
+
+/* =========================================================
+   HEADER TOP
+========================================================= */
+
+.cqa-header-top {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.cqa-back-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  background: transparent;
+
+  color: #746c64;
+
+  font-size: 15px;
+
+  font-weight: 400;
+
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.cqa-back-button:hover {
+  color: #171411;
+}
+
+.cqa-arrow-icon {
+  width: 19px;
+  height: 19px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.5;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.cqa-header-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   GLOBAL SEARCH
+========================================================= */
+
+.cqa-global-search {
+  height: 52px;
+
+  min-width: 300px;
+
+  padding:
+    0
+    14px
+    0
+    18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  background: #faf9f6;
+
+  border: 1px solid #dfdbd3;
+
+  border-radius: 7px;
+
+  color: #655e57;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.02);
+
+  white-space: nowrap;
+}
+
+.cqa-global-search:hover {
+  border-color: #c9c3ba;
+}
+
+.cqa-icon {
+  width: 20px;
+  height: 20px;
+
+  flex-shrink: 0;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+.cqa-global-search span {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.cqa-global-search kbd {
+  margin-left: auto;
+
+  padding:
+    4px
+    8px;
+
+  border: 1px solid #e1dcd4;
+
+  border-radius: 6px;
+
+  background: #f8f6f2;
+
+  color: #8b837b;
+
+  font-size: 13px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.cqa-profile {
+  min-height: 52px;
+
+  padding:
+    0
+    17px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  background: #faf9f6;
+
+  border: 1px solid #dfdbd3;
+
+  border-radius: 7px;
+
+  white-space: nowrap;
+}
+
+.cqa-user-icon {
+  width: 21px;
+  height: 21px;
+
+  flex-shrink: 0;
+
+  fill: none;
+
+  stroke: #777068;
+
+  stroke-width: 1.5;
+
+  stroke-linecap: round;
+}
+
+.cqa-profile-name {
+  color: #181411;
+
+  font-size: 18px;
+
+  font-weight: 400;
+}
+
+.cqa-admin {
+  margin-left: 2px;
+
+  padding:
+    7px
+    13px;
+
+  border-radius: 18px;
+
+  background: #f2e7d7;
+
+  color: #17120e;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.cqa-page-heading {
+  margin-top: 25px;
+}
+
+.cqa-page-heading h1 {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(31px, 2.2vw, 40px);
+
+  line-height: 1.1;
+
+  font-weight: 500;
+
+  letter-spacing: -0.8px;
+
+  color: #080604;
+}
+
+.cqa-page-heading h1 span {
+  color: #cf8a4f;
+
+  font-weight: 400;
+}
+
+.cqa-page-heading p {
+  margin-top: 11px;
+
+  color: #756e67;
+
+  font-size: clamp(17px, 1.25vw, 21px);
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.cqa-main {
+  width: 100%;
+
+  padding:
+    42px
+    clamp(20px, 2vw, 38px)
+    60px;
+
+  background: #f7f5f0;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.cqa-statistics {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 0;
+}
+
+.cqa-stat-card {
+  min-width: 0;
+
+  min-height: 140px;
+
+  padding:
+    23px
+    24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  background: #fdfcf9;
+
+  border: 1px solid #ddd9d1;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 10px 24px rgba(41, 35, 29, 0.06);
+}
+
+.cqa-stat-label {
+  color: #766e67;
+
+  font-size: 16px;
+
+  line-height: 1;
+
+  letter-spacing: 2px;
+
+  font-weight: 400;
+}
+
+.cqa-stat-value {
+  margin-top: 17px;
+
+  color: #090705;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 40px;
+
+  line-height: 1;
+
+  font-weight: 400;
+}
+
+.cqa-stat-description {
+  margin-top: 7px;
+
+  color: #776f68;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   QUEUE CARD
+========================================================= */
+
+.cqa-queue-card {
+  width: 100%;
+
+  padding:
+    34px
+    30px
+    38px;
+
+  background: #fdfcf9;
+
+  border:
+    1px solid #dedad2;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 8px 20px rgba(40, 33, 27, 0.04);
+}
+
+
+/* =========================================================
+   QUEUE HEADER
+========================================================= */
+
+.cqa-queue-header {
+  width: 100%;
+
+  margin-bottom: 26px;
+}
+
+.cqa-queue-header h2,
+.cqa-section-title {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  color: #0b0806;
+
+  font-size: clamp(27px, 2vw, 34px);
+
+  line-height: 1.15;
+
+  font-weight: 500;
+}
+
+.cqa-queue-header p {
+  margin-top: 9px;
+
+  color: #776f68;
+
+  font-size: clamp(17px, 1.2vw, 21px);
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.cqa-queue-search {
+  width: 100%;
+
+  height: 58px;
+
+  margin-bottom: 31px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding:
+    0
+    17px;
+
+  background: #fffdfa;
+
+  border: 1px solid #ded9d1;
+
+  border-radius: 7px;
+
+  box-shadow:
+    0 3px 7px rgba(0, 0, 0, 0.07);
+}
+
+.cqa-queue-search .cqa-icon {
+  width: 19px;
+  height: 19px;
+
+  color: #756d65;
+}
+
+.cqa-queue-search input {
+  width: 100%;
+
+  min-width: 0;
+
+  height: 100%;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #1b1713;
+
+  font-size: 20px;
+}
+
+.cqa-queue-search input::placeholder {
+  color: #8b8279;
+}
+
+
+/* =========================================================
+   QUEUE LIST
+========================================================= */
+
+.cqa-queue-list {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   REVIEW CARD
+========================================================= */
+
+.cqa-review-card {
+  width: 100%;
+
+  padding:
+    26px
+    24px
+    28px;
+
+  background: #fefdfb;
+
+  border:
+    1px solid #ddd9d2;
+
+  border-radius: 7px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cqa-review-card:hover {
+  border-color: #d0cac1;
+
+  box-shadow:
+    0 5px 16px rgba(40, 34, 29, 0.04);
+}
+
+
+/* =========================================================
+   REVIEW TITLE
+========================================================= */
+
+.cqa-review-title-row {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 11px;
+}
+
+.cqa-review-title-row h3 {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  color: #090705;
+
+  font-size: clamp(22px, 1.5vw, 27px);
+
+  line-height: 1.2;
+
+  font-weight: 600;
+
+  letter-spacing: -0.3px;
+}
+
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.cqa-status-badge {
+  min-height: 32px;
+
+  padding:
+    6px
+    15px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 18px;
+
+  font-size: 14px;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  font-weight: 500;
+}
+
+.cqa-status-badge.pending {
+  background: #f5e7d5;
+
+  color: #14100c;
+}
+
+.cqa-status-badge.approved {
+  background: #e5eee7;
+
+  color: #34765b;
+}
+
+.cqa-status-badge.rejected {
+  background: #f2e1dc;
+
+  color: #8b3d32;
+}
+
+
+/* =========================================================
+   SKU
+========================================================= */
+
+.cqa-sku-code {
+  margin-top: 9px;
+
+  color: #746c64;
+
+  font-size: 16px;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.2px;
+
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.cqa-product-summary {
+  margin-top: 13px;
+
+  color: #776f68;
+
+  font-size: clamp(17px, 1.2vw, 21px);
+
+  line-height: 1.45;
+
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   CHECK GRID
+========================================================= */
+
+.cqa-check-grid {
+  width: 100%;
+
+  margin-top: 18px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  column-gap: 40px;
+}
+
+.cqa-check-column {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.cqa-check-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  color: #776f68;
+
+  font-size: clamp(16px, 1.15vw, 20px);
+
+  line-height: 1.45;
+}
+
+.cqa-check-item span {
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   REVIEW ACTIONS
+========================================================= */
+
+.cqa-review-actions {
+  margin-top: 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   SCORE INPUT
+========================================================= */
+
+.cqa-score-input {
+  width: 200px;
+
+  height: 54px;
+
+  padding:
+    0
+    18px;
+
+  background: #fffdfa;
+
+  border: 1px solid #ddd8d0;
+
+  border-radius: 7px;
+
+  color: #1a1612;
+
+  font-size: 18px;
+
+  box-shadow:
+    0 3px 7px rgba(0, 0, 0, 0.08);
+}
+
+.cqa-score-input::placeholder {
+  color: #8b8178;
+}
+
+.cqa-score-input:focus {
+  border-color: #a79b8e;
+
+  box-shadow:
+    0 3px 9px rgba(0, 0, 0, 0.1);
+}
+
+.cqa-score-input::-webkit-inner-spin-button,
+.cqa-score-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+
+  margin: 0;
+}
+
+.cqa-score-input[type="number"] {
+  appearance: textfield;
+
+  -moz-appearance: textfield;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.cqa-submit-button,
+.cqa-secondary-button {
+  min-height: 54px;
+
+  padding:
+    0
+    20px;
+
+  border-radius: 7px;
+
+  font-size: 17px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.1s ease;
+
+  white-space: nowrap;
+}
+
+.cqa-submit-button {
+  background: #2b211a;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 3px 7px rgba(0, 0, 0, 0.12);
+}
+
+.cqa-submit-button:hover {
+  background: #1f1813;
+}
+
+.cqa-submit-button:active,
+.cqa-secondary-button:active {
+  transform: translateY(1px);
+}
+
+.cqa-secondary-button {
+  background: #faf8f4;
+
+  border: 1px solid #ded9d1;
+
+  color: #17130f;
+
+  box-shadow:
+    0 3px 7px rgba(0, 0, 0, 0.07);
+}
+
+.cqa-secondary-button:hover {
+  background: #f2eee7;
+
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.09);
+}
+
+
+/* =========================================================
+   GENERIC SECTION CARD
+========================================================= */
+
+.cqa-section-card {
+  width: 100%;
+
+  margin-top: 2px;
+
+  padding:
+    38px
+    34px
+    34px;
+
+  background: #fdfcf9;
+
+  border:
+    1px solid #dedad2;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 8px 20px rgba(40, 33, 27, 0.04);
+}
+
+.cqa-section-description {
+  margin-top: 9px;
+
+  color: #776f68;
+
+  font-size: 20px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   REVIEWED LIST
+========================================================= */
+
+.cqa-reviewed-list {
+  width: 100%;
+
+  margin-top: 27px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.cqa-reviewed-row {
+  width: 100%;
+
+  min-height: 61px;
+
+  padding:
+    0
+    20px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.25fr
+    1.35fr
+    0.75fr
+    auto;
+
+  align-items: center;
+
+  gap: 20px;
+
+  background: #fefdfb;
+
+  border:
+    1px solid #ddd9d2;
+
+  border-radius: 7px;
+}
+
+.cqa-reviewed-name {
+  min-width: 0;
+
+  color: #15120f;
+
+  font-size: 19px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.cqa-reviewed-sku {
+  min-width: 0;
+
+  color: #746c64;
+
+  font-size: 16px;
+
+  overflow-wrap: anywhere;
+}
+
+.cqa-reviewed-score {
+  color: #15120f;
+
+  font-size: 19px;
+
+  white-space: nowrap;
+}
+
+.cqa-reviewed-row .cqa-status-badge {
+  justify-self: end;
+}
+
+
+/* =========================================================
+   AUDIT
+========================================================= */
+
+.cqa-audit-section {
+  margin-top: 2px;
+}
+
+.cqa-empty-audit {
+  width: 100%;
+
+  min-height: 138px;
+
+  margin-top: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 20px;
+
+  border:
+    1px dashed #d6d0c7;
+
+  border-radius: 8px;
+
+  background: #fcfbf8;
+
+  color: #777067;
+
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   NO RESULTS
+========================================================= */
+
+.cqa-no-results {
+  width: 100%;
+
+  padding:
+    55px
+    20px;
+
+  text-align: center;
+
+  border:
+    1px dashed #d6d0c7;
+
+  border-radius: 8px;
+
+  background: #fcfbf8;
+}
+
+.cqa-no-results h3 {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 26px;
+}
+
+.cqa-no-results p {
+  margin-top: 9px;
+
+  color: #777067;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   1800px+
+========================================================= */
+
+@media (min-width: 1800px) {
+
+  .cqa-brand {
+    width: 135px;
+
+    flex-basis: 135px;
+  }
+
+  .cqa-header-inner {
+    min-height: 205px;
+  }
+
+  .cqa-main {
+    padding:
+      45px
+      38px
+      65px;
+  }
+
+  .cqa-stat-card {
+    min-height: 145px;
+  }
+
+  .cqa-review-card {
+    padding:
+      29px
+      28px
+      31px;
+  }
+}
+
+
+/* =========================================================
+   1440px - 1799px
+========================================================= */
+
+@media (max-width: 1799px) {
+
+  .cqa-global-search {
+    min-width: 280px;
+  }
+
+  .cqa-profile-name {
+    font-size: 17px;
+  }
+
+  .cqa-main {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+}
+
+
+/* =========================================================
+   1280px - 1439px
+========================================================= */
+
+@media (max-width: 1439px) {
+
+  .cqa-brand {
+    width: 105px;
+
+    flex-basis: 105px;
+  }
+
+  .cqa-header-main {
+    padding:
+      27px
+      27px
+      25px
+      15px;
+  }
+
+  .cqa-global-search {
+    min-width: 250px;
+
+    height: 49px;
+
+    font-size: 16px;
+  }
+
+  .cqa-profile {
+    min-height: 49px;
+
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  .cqa-profile-name {
+    font-size: 15px;
+  }
+
+  .cqa-admin {
+    font-size: 13px;
+
+    padding:
+      6px
+      10px;
+  }
+
+  .cqa-page-heading {
+    margin-top: 23px;
+  }
+
+  .cqa-page-heading h1 {
+    font-size: 34px;
+  }
+
+  .cqa-page-heading p {
+    font-size: 18px;
+  }
+
+  .cqa-main {
+    padding:
+      36px
+      28px
+      50px;
+  }
+
+  .cqa-stat-card {
+    min-height: 125px;
+  }
+
+  .cqa-stat-label {
+    font-size: 14px;
+  }
+
+  .cqa-stat-value {
+    font-size: 36px;
+  }
+
+  .cqa-queue-card {
+    padding:
+      30px
+      27px
+      35px;
+  }
+
+  .cqa-section-card {
+    padding:
+      32px
+      28px;
+  }
+
+  .cqa-reviewed-row {
+    grid-template-columns:
+      1.2fr
+      1.3fr
+      0.7fr
+      auto;
+  }
+}
+
+
+/* =========================================================
+   1024px - 1279px
+========================================================= */
+
+@media (max-width: 1279px) {
+
+  .cqa-header-inner {
+    min-height: 175px;
+  }
+
+  .cqa-brand {
+    width: 90px;
+
+    flex-basis: 90px;
+  }
+
+  .cqa-header-main {
+    padding:
+      23px
+      20px
+      23px
+      10px;
+  }
+
+  .cqa-header-top {
+    gap: 15px;
+  }
+
+  .cqa-header-actions {
+    gap: 8px;
+  }
+
+  .cqa-global-search {
+    min-width: 220px;
+
+    padding-left: 13px;
+
+    font-size: 15px;
+  }
+
+  .cqa-profile {
+    gap: 7px;
+
+    padding:
+      0
+      10px;
+  }
+
+  .cqa-profile-name {
+    font-size: 14px;
+  }
+
+  .cqa-admin {
+    padding:
+      5px
+      8px;
+
+    font-size: 12px;
+  }
+
+  .cqa-back-button {
+    font-size: 13px;
+
+    letter-spacing: 1.7px;
+  }
+
+  .cqa-page-heading h1 {
+    font-size: 31px;
+  }
+
+  .cqa-page-heading p {
+    font-size: 17px;
+  }
+
+  .cqa-main {
+    padding:
+      30px
+      20px
+      45px;
+  }
+
+  .cqa-statistics {
+    gap: 14px;
+  }
+
+  .cqa-stat-card {
+    min-height: 115px;
+
+    padding:
+      20px;
+  }
+
+  .cqa-stat-value {
+    font-size: 34px;
+  }
+
+  .cqa-queue-card {
+    padding:
+      27px
+      22px
+      32px;
+  }
+
+  .cqa-review-card {
+    padding:
+      23px
+      22px
+      25px;
+  }
+
+  .cqa-product-summary {
+    font-size: 17px;
+  }
+
+  .cqa-check-item {
+    font-size: 17px;
+  }
+
+  .cqa-section-card {
+    padding:
+      28px
+      22px;
+  }
+
+  .cqa-reviewed-row {
+    grid-template-columns:
+      1.1fr
+      1.3fr
+      auto
+      auto;
+
+    gap: 14px;
+
+    padding:
+      0
+      15px;
+  }
+
+  .cqa-reviewed-name,
+  .cqa-reviewed-score {
+    font-size: 17px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   768px - 1023px
+========================================================= */
+
+@media (max-width: 1023px) {
+
+  .cqa-header-inner {
+    display: block;
+
+    min-height: auto;
+  }
+
+  .cqa-brand {
+    width: 100%;
+
+    height: 70px;
+
+    justify-content: flex-start;
+
+    padding-left: 22px;
+  }
+
+  .cqa-logo-placeholder {
+    align-items: flex-start;
+  }
+
+  .cqa-header-main {
+    width: 100%;
+
+    padding:
+      0
+      22px
+      24px;
+  }
+
+  .cqa-header-top {
+    align-items: flex-start;
+  }
+
+  .cqa-header-actions {
+    flex-shrink: 0;
+  }
+
+  .cqa-global-search {
+    min-width: 210px;
+  }
+
+  .cqa-page-heading {
+    margin-top: 24px;
+  }
+
+  .cqa-statistics {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .cqa-stat-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .cqa-check-grid {
+    grid-template-columns: 1fr;
+
+    row-gap: 6px;
+  }
+
+  .cqa-reviewed-row {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    padding:
+      14px
+      16px;
+  }
+
+  .cqa-reviewed-row .cqa-status-badge {
+    justify-self: start;
+  }
+}
+
+
+/* =========================================================
+   700px - 767px
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .cqa-brand {
+    height: 65px;
+
+    padding-left: 18px;
+  }
+
+  .cqa-header-main {
+    padding:
+      0
+      18px
+      23px;
+  }
+
+  .cqa-header-top {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 18px;
+  }
+
+  .cqa-back-button {
+    align-self: flex-start;
+  }
+
+  .cqa-header-actions {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      auto;
+
+    gap: 8px;
+  }
+
+  .cqa-global-search {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .cqa-profile {
+    min-width: 0;
+
+    padding:
+      0
+      10px;
+  }
+
+  .cqa-profile-name {
+    max-width: 105px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+  }
+
+  .cqa-main {
+    padding:
+      22px
+      14px
+      40px;
+  }
+
+  .cqa-statistics {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .cqa-stat-card:last-child {
+    grid-column: auto;
+  }
+
+  .cqa-stat-card {
+    min-height: 105px;
+  }
+
+  .cqa-queue-card {
+    padding:
+      22px
+      14px
+      25px;
+  }
+
+  .cqa-queue-header {
+    margin-bottom: 20px;
+  }
+
+  .cqa-queue-header h2,
+  .cqa-section-title {
+    font-size: 27px;
+  }
+
+  .cqa-queue-header p {
+    font-size: 16px;
+  }
+
+  .cqa-queue-search {
+    height: 54px;
+
+    margin-bottom: 20px;
+  }
+
+  .cqa-queue-search input {
+    font-size: 16px;
+  }
+
+  .cqa-review-card {
+    padding:
+      20px
+      16px
+      21px;
+  }
+
+  .cqa-review-title-row {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 9px;
+  }
+
+  .cqa-review-title-row h3 {
+    font-size: 22px;
+  }
+
+  .cqa-sku-code {
+    font-size: 14px;
+  }
+
+  .cqa-product-summary {
+    font-size: 16px;
+  }
+
+  .cqa-check-grid {
+    margin-top: 15px;
+  }
+
+  .cqa-check-item {
+    font-size: 16px;
+  }
+
+  .cqa-review-actions {
+    align-items: stretch;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .cqa-score-input,
+  .cqa-submit-button,
+  .cqa-secondary-button {
+    width: 100%;
+  }
+
+  .cqa-section-card {
+    margin-top: 0;
+
+    padding:
+      25px
+      16px
+      27px;
+  }
+
+  .cqa-section-description {
+    font-size: 16px;
+  }
+
+  .cqa-reviewed-list {
+    margin-top: 20px;
+  }
+
+  .cqa-reviewed-row {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+
+    min-height: 0;
+
+    padding:
+      14px;
+  }
+
+  .cqa-reviewed-name {
+    white-space: normal;
+
+    font-size: 17px;
+  }
+
+  .cqa-reviewed-sku {
+    font-size: 14px;
+  }
+
+  .cqa-reviewed-score {
+    font-size: 17px;
+  }
+
+  .cqa-reviewed-row .cqa-status-badge {
+    justify-self: start;
+  }
+
+  .cqa-empty-audit {
+    min-height: 110px;
+
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   BELOW 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .cqa-brand {
+    height: 60px;
+
+    padding-left: 15px;
+  }
+
+  .cqa-logo-mark {
+    font-size: 16px;
+  }
+
+  .cqa-logo-placeholder span {
+    font-size: 7px;
+  }
+
+  .cqa-header-main {
+    padding:
+      0
+      15px
+      20px;
+  }
+
+  .cqa-header-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .cqa-global-search,
+  .cqa-profile {
+    width: 100%;
+  }
+
+  .cqa-profile {
+    justify-content: flex-start;
+
+    min-height: 48px;
+  }
+
+  .cqa-profile-name {
+    max-width: none;
+  }
+
+  .cqa-page-heading {
+    margin-top: 20px;
+  }
+
+  .cqa-page-heading h1 {
+    font-size: 28px;
+  }
+
+  .cqa-page-heading p {
+    margin-top: 8px;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+  }
+
+  .cqa-main {
+    padding:
+      18px
+      10px
+      35px;
+  }
+
+  .cqa-stat-card {
+    min-height: 100px;
+
+    padding:
+      18px
+      20px;
+  }
+
+  .cqa-stat-label {
+    font-size: 13px;
+  }
+
+  .cqa-stat-value {
+    margin-top: 13px;
+
+    font-size: 34px;
+  }
+
+  .cqa-queue-card {
+    padding:
+      20px
+      11px
+      22px;
+  }
+
+  .cqa-queue-header h2 {
+    font-size: 25px;
+  }
+
+  .cqa-queue-header p {
+    font-size: 15px;
+  }
+
+  .cqa-queue-search {
+    padding:
+      0
+      13px;
+  }
+
+  .cqa-review-card {
+    padding:
+      18px
+      13px
+      20px;
+  }
+
+  .cqa-review-title-row h3 {
+    font-size: 20px;
+  }
+
+  .cqa-status-badge {
+    min-height: 29px;
+
+    padding:
+      5px
+      11px;
+
+    font-size: 12px;
+  }
+
+  .cqa-product-summary {
+    font-size: 15px;
+  }
+
+  .cqa-check-item {
+    font-size: 15px;
+  }
+
+  .cqa-section-card {
+    padding:
+      22px
+      13px
+      24px;
+  }
+
+  .cqa-section-title {
+    font-size: 25px;
+  }
+
+  .cqa-empty-audit {
+    min-height: 100px;
+
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   BELOW 360px
+========================================================= */
+
+@media (max-width: 359px) {
+
+  .cqa-main {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .cqa-header-main {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .cqa-page-heading h1 {
+    font-size: 25px;
+  }
+
+  .cqa-page-heading p {
+    font-size: 14px;
+  }
+
+  .cqa-queue-card {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+
+  .cqa-review-card {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .cqa-section-card {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .cqa-review-title-row h3 {
+    font-size: 19px;
+  }
+
+  .cqa-stat-value {
+    font-size: 31px;
+  }
+}
+
+
+/* =========================================================
+   2K / 4K
+   2000px+
+========================================================= */
+
+@media (min-width: 2000px) {
+
+  .cqa-brand {
+    width: 155px;
+
+    flex-basis: 155px;
+  }
+
+  .cqa-header-inner {
+    min-height: 225px;
+  }
+
+  .cqa-header-main {
+    padding:
+      40px
+      50px
+      32px
+      25px;
+  }
+
+  .cqa-main {
+    padding:
+      55px
+      60px
+      75px;
+  }
+
+  .cqa-global-search {
+    min-width: 360px;
+
+    height: 60px;
+
+    font-size: 21px;
+  }
+
+  .cqa-profile {
+    min-height: 60px;
+  }
+
+  .cqa-profile-name {
+    font-size: 21px;
+  }
+
+  .cqa-page-heading h1 {
+    font-size: 44px;
+  }
+
+  .cqa-page-heading p {
+    font-size: 25px;
+  }
+
+  .cqa-statistics {
+    gap: 22px;
+  }
+
+  .cqa-stat-card {
+    min-height: 150px;
+  }
+
+  .cqa-stat-label {
+    font-size: 18px;
+  }
+
+  .cqa-stat-value {
+    font-size: 48px;
+  }
+
+  .cqa-queue-card {
+    padding:
+      43px
+      38px
+      50px;
+  }
+
+  .cqa-queue-header h2,
+  .cqa-section-title {
+    font-size: 36px;
+  }
+
+  .cqa-queue-header p {
+    font-size: 25px;
+  }
+
+  .cqa-queue-search {
+    height: 68px;
+  }
+
+  .cqa-queue-search input {
+    font-size: 23px;
+  }
+
+  .cqa-review-card {
+    padding:
+      32px
+      30px
+      34px;
+  }
+
+  .cqa-review-title-row h3 {
+    font-size: 30px;
+  }
+
+  .cqa-product-summary {
+    font-size: 23px;
+  }
+
+  .cqa-check-item {
+    font-size: 21px;
+  }
+
+  .cqa-score-input,
+  .cqa-submit-button,
+  .cqa-secondary-button {
+    min-height: 62px;
+
+    font-size: 19px;
+  }
+
+  .cqa-score-input {
+    width: 240px;
+  }
+
+  .cqa-section-card {
+    padding:
+      42px
+      38px
+      40px;
+  }
+
+  .cqa-reviewed-name,
+  .cqa-reviewed-score {
+    font-size: 21px;
+  }
+
+  .cqa-reviewed-sku {
+    font-size: 18px;
+  }
+
+  .cqa-empty-audit {
+    min-height: 160px;
+
+    font-size: 22px;
+  }
+}

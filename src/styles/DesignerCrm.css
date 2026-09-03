@@ -1,0 +1,1301 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f8f6f1;
+  color: #17120f;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.designer-crm-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #f8f6f1;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.crm-header {
+  width: 100%;
+  min-height: 115px;
+
+  padding: 28px 34px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  background: #fffdfa;
+
+  border-bottom: 1px solid #ded8d0;
+}
+
+
+/* =========================================================
+   HEADER LEFT
+========================================================= */
+
+.crm-header-left {
+  display: flex;
+  align-items: center;
+
+  gap: 28px;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.crm-logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 72px;
+  min-width: 72px;
+
+  text-decoration: none;
+}
+
+.crm-logo {
+  display: block;
+
+  width: 72px;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   TITLE AREA
+========================================================= */
+
+.crm-title-area {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   BACK LINK
+========================================================= */
+
+.all-layers-link {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  width: fit-content;
+
+  margin-bottom: 12px;
+
+  color: #746d67;
+
+  font-size: 11px;
+  font-weight: 400;
+
+  letter-spacing: 1.7px;
+
+  text-decoration: none;
+}
+
+.all-layers-link:hover {
+  color: #231b16;
+}
+
+.back-arrow {
+  font-size: 21px;
+  line-height: 1;
+}
+
+
+/* =========================================================
+   PAGE TITLE
+========================================================= */
+
+.crm-page-title {
+  margin: 0;
+
+  color: #17120f;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 29px;
+  font-weight: 400;
+
+  line-height: 1.15;
+}
+
+.crm-number {
+  margin-right: 9px;
+
+  color: #cf8240;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+}
+
+
+/* =========================================================
+   PAGE DESCRIPTION
+========================================================= */
+
+.crm-page-description {
+  margin: 10px 0 0;
+
+  color: #746c66;
+
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   HEADER RIGHT
+========================================================= */
+
+.crm-header-right {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.crm-search {
+  width: 285px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 13px 0 17px;
+
+  color: #716a64;
+
+  background: #fffdfa;
+
+  border: 1px solid #ded8d0;
+  border-radius: 7px;
+}
+
+.crm-search svg {
+  flex-shrink: 0;
+}
+
+.crm-search span {
+  flex: 1;
+
+  white-space: nowrap;
+
+  font-size: 18px;
+}
+
+.crm-search kbd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 38px;
+  height: 29px;
+
+  padding: 0 7px;
+
+  color: #716a64;
+
+  background: #f8f6f1;
+
+  border: 1px solid #ddd7cf;
+  border-radius: 6px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   USER
+========================================================= */
+
+.crm-user {
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 0 16px;
+
+  background: #fffdfa;
+
+  border: 1px solid #ded8d0;
+  border-radius: 7px;
+
+  white-space: nowrap;
+}
+
+.crm-user svg {
+  color: #716a64;
+}
+
+.crm-user-name {
+  color: #17120f;
+
+  font-size: 17px;
+}
+
+.crm-admin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 75px;
+  height: 30px;
+
+  padding: 0 14px;
+
+  color: #241a14;
+
+  background: #f2e5d2;
+
+  border-radius: 18px;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.crm-content {
+  width: 100%;
+
+  padding: 20px 20px 20px;
+}
+
+
+/* =========================================================
+   KPI GRID
+========================================================= */
+
+.crm-kpi-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 17px;
+
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   KPI CARD
+========================================================= */
+
+.crm-kpi-card {
+  min-height: 132px;
+
+  padding: 22px 23px;
+
+  background: #fffdfa;
+
+  border: 1px solid #ded8d0;
+  border-radius: 8px;
+
+  box-shadow:
+    0 10px 25px rgba(52, 40, 30, 0.06);
+}
+
+
+/* =========================================================
+   KPI LABEL
+========================================================= */
+
+.crm-kpi-label {
+  color: #776f68;
+
+  font-size: 15px;
+  font-weight: 400;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   KPI VALUE
+========================================================= */
+
+.crm-kpi-value {
+  margin-top: 20px;
+
+  color: #17120f;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 35px;
+  line-height: 1;
+}
+
+
+/* =========================================================
+   KPI SUBTITLE
+========================================================= */
+
+.crm-kpi-subtitle {
+  margin-top: 7px;
+
+  color: #746c66;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   PIPELINE CARD
+========================================================= */
+
+.pipeline-card {
+  margin-top: 2%;
+
+  padding: 20px 20px 20px;
+
+  background: #fffdfa;
+
+  border: 1px solid #ded8d0;
+  border-radius: 8px;
+}
+
+
+/* =========================================================
+   PIPELINE HEADING
+========================================================= */
+
+.pipeline-heading h2 {
+  margin: 0;
+
+  color: #17120f;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.pipeline-heading p {
+  margin: 8px 0 15px;
+
+  color: #746c66;
+
+  font-size: 14px;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   DESIGNER LIST
+========================================================= */
+
+.designer-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 17px;
+}
+
+
+/* =========================================================
+   DESIGNER ROW
+========================================================= */
+
+.designer-row {
+  min-height: 153px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding: 23px 22px;
+
+  background: #fffdfa;
+
+  border: 1px solid #ded8d0;
+  border-radius: 7px;
+}
+
+
+/* =========================================================
+   DESIGNER INFORMATION
+========================================================= */
+
+.designer-information {
+  min-width: 0;
+  flex: 1;
+}
+
+
+/* =========================================================
+   NAME LINE
+========================================================= */
+
+.designer-name-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.designer-name-line h3 {
+  margin: 0;
+
+  color: #17120f;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   STATUS PILL
+========================================================= */
+
+.status-pill,
+.tier-pill,
+.kyc-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 30px;
+
+  padding: 4px 13px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+  line-height: 1;
+}
+
+
+/* STATUS */
+
+.status-pill {
+  color: #267351;
+
+  background: #e5eee7;
+}
+
+.status-pill.portfolio {
+  color: #3e3229;
+
+  background: #f1e8dc;
+}
+
+.status-pill.lead {
+  color: #5c5047;
+
+  background: #eee8e2;
+}
+
+.status-pill.qualified,
+.status-pill.review {
+  color: #805e26;
+
+  background: #f4ead8;
+}
+
+.status-pill.approved,
+.status-pill.contract,
+.status-pill.signed {
+  color: #326d52;
+
+  background: #e5eee7;
+}
+
+.status-pill.live,
+.status-pill.active {
+  color: #267351;
+
+  background: #e5eee7;
+}
+
+
+/* =========================================================
+   TIER
+========================================================= */
+
+.tier-pill {
+  color: #332820;
+
+  background: #f3e4d4;
+}
+
+
+/* =========================================================
+   KYC
+========================================================= */
+
+.kyc-pill.verified {
+  color: #267351;
+
+  background: #e5eee7;
+}
+
+.kyc-pill.missing {
+  color: #c8584d;
+
+  background: #f9e5e2;
+}
+
+
+/* =========================================================
+   DESIGNER DETAILS
+========================================================= */
+
+.designer-details {
+  max-width: 850px;
+
+  margin: 9px 0 0;
+
+  color: #746c66;
+
+  font-size: 15px!important;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   DESIGNER ACTIONS
+========================================================= */
+
+.designer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  min-width: 485px;
+}
+
+
+/* =========================================================
+   STAGE SELECT
+========================================================= */
+
+.stage-select-wrapper {
+  position: relative;
+
+  width: 194px;
+  height: 50px;
+}
+
+.stage-select {
+  width: 100%;
+  height: 100%;
+
+  appearance: none;
+
+  padding: 0 42px 0 17px;
+
+  color: #17120f;
+
+  background: #fffdfa;
+
+  border: 1px solid #ded8d0;
+  border-radius: 7px;
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  outline: none;
+}
+
+.stage-select:focus {
+  border-color: #b8a99a;
+}
+
+.stage-select-wrapper svg {
+  position: absolute;
+
+  right: 13px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #8c847c;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.secondary-button {
+  height: 46px;
+
+  padding: 0 17px;
+
+  color: #201813;
+
+  background: #fffdfa;
+
+  border: 1px solid #ded8d0;
+  border-radius: 7px;
+
+  box-shadow:
+    0 2px 5px rgba(44, 32, 24, 0.08);
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.secondary-button:hover {
+  background: #f5f0ea;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   ADVANCE BUTTON
+========================================================= */
+
+.advance-button {
+  height: 46px;
+
+  padding: 0 18px;
+
+  color: #fffdfa;
+
+  background: #2a1e17;
+
+  border: 1px solid #2a1e17;
+  border-radius: 7px;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.advance-button:hover {
+  background: #3b2b21;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   ADD DESIGNER CARD
+========================================================= */
+
+.add-designer-card {
+  margin-top: 2%;
+
+  padding: 20px 20px 20px;
+
+  background: #fffdfa;
+
+  border: 1px solid #ded8d0;
+  border-radius: 8px;
+}
+
+
+/* =========================================================
+   ADD DESIGNER HEADING
+========================================================= */
+
+.add-designer-heading h2 {
+  margin: 0;
+
+  color: #17120f;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 29px;
+  font-weight: 400;
+}
+
+.add-designer-heading p {
+  margin: 8px 0 38px;
+
+  color: #746c66;
+
+  font-size: 19px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.designer-form {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  column-gap: 27px;
+  row-gap: 36px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+
+  color: #746c66;
+
+  font-size: 15px;
+
+  letter-spacing: 2px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  height: 59px;
+
+  padding: 0 19px;
+
+  color: #17120f;
+
+  background: #fffdfa;
+
+  border: 1px solid #ded8d0;
+  border-radius: 7px;
+
+  outline: none;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 20px;
+
+  box-shadow:
+    0 3px 8px rgba(42, 31, 23, 0.08);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #b9aa9c;
+
+  box-shadow:
+    0 0 0 2px rgba(185, 170, 156, 0.12);
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.select-form-group select {
+  appearance: none;
+
+  padding-right: 50px;
+
+  cursor: pointer;
+}
+
+.select-form-group svg {
+  position: absolute;
+
+  right: 17px;
+  bottom: 20px;
+
+  color: #8a8179;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   DATE INPUT
+========================================================= */
+
+.form-group input[type="date"] {
+  color-scheme: light;
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+.form-submit {
+  grid-column: 1 / -1;
+
+  margin-top: -8px;
+}
+
+.create-lead-button {
+  min-width: 176px;
+  height: 59px;
+
+  padding: 0 25px;
+
+  color: #fffdfa;
+
+  background: #2a1e17;
+
+  border: 1px solid #2a1e17;
+  border-radius: 7px;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.create-lead-button:hover {
+  background: #3b2b21;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   LAPTOP - 1440px
+========================================================= */
+
+@media (max-width: 1440px) {
+
+  .crm-header {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .crm-content {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .crm-header-right {
+    gap: 10px;
+  }
+
+  .crm-search {
+    width: 265px;
+  }
+
+  .crm-user {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  .designer-actions {
+    min-width: 450px;
+  }
+
+  .designer-details {
+    font-size: 17px;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP - 1200px
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .crm-header {
+    align-items: flex-start;
+
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .crm-header-left {
+    gap: 18px;
+  }
+
+  .crm-logo-link,
+  .crm-logo {
+    width: 62px;
+    min-width: 62px;
+  }
+
+  .crm-page-title {
+    font-size: 29px;
+  }
+
+  .crm-page-description {
+    font-size: 16px;
+  }
+
+  .crm-search {
+    width: 250px;
+  }
+
+  .crm-search span {
+    font-size: 16px;
+  }
+
+  .crm-user-name {
+    font-size: 15px;
+  }
+
+  .designer-row {
+    align-items: flex-start;
+  }
+
+  .designer-actions {
+    min-width: 390px;
+  }
+
+  .stage-select-wrapper {
+    width: 160px;
+  }
+
+  .secondary-button,
+  .advance-button {
+    font-size: 14px;
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .crm-header {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 25px;
+  }
+
+  .crm-header-right {
+    width: 100%;
+  }
+
+  .crm-search {
+    flex: 1;
+    width: auto;
+  }
+
+  .crm-user {
+    flex: 0 0 auto;
+  }
+
+  .crm-kpi-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .designer-row {
+    flex-direction: column;
+  }
+
+  .designer-actions {
+    width: 100%;
+    min-width: 0;
+
+    justify-content: flex-start;
+  }
+
+  .designer-details {
+    max-width: none;
+  }
+
+  .designer-form {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .crm-header {
+    padding: 20px 18px;
+  }
+
+  .crm-header-left {
+    align-items: flex-start;
+
+    gap: 14px;
+  }
+
+  .crm-logo-link,
+  .crm-logo {
+    width: 50px;
+    min-width: 50px;
+  }
+
+  .all-layers-link {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+  }
+
+  .crm-page-title {
+    font-size: 25px;
+  }
+
+  .crm-number {
+    margin-right: 5px;
+  }
+
+  .crm-page-description {
+    font-size: 14px;
+  }
+
+  .crm-header-right {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .crm-search {
+    width: 100%;
+  }
+
+  .crm-user {
+    width: 100%;
+  }
+
+  .crm-content {
+    padding: 20px 15px 45px;
+  }
+
+  .crm-kpi-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .crm-kpi-card {
+    min-height: 115px;
+  }
+
+  .pipeline-card {
+    padding: 22px 15px;
+  }
+
+  .pipeline-heading h2 {
+    font-size: 25px;
+  }
+
+  .pipeline-heading p {
+    font-size: 15px;
+  }
+
+  .designer-row {
+    padding: 19px 15px;
+  }
+
+  .designer-name-line h3 {
+    font-size: 20px;
+  }
+
+  .designer-details {
+    font-size: 15px;
+  }
+
+  .designer-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .stage-select-wrapper,
+  .secondary-button,
+  .advance-button {
+    width: 100%;
+  }
+
+  .secondary-button,
+  .advance-button {
+    height: 48px;
+  }
+
+  .add-designer-card {
+    padding: 25px 15px;
+  }
+
+  .add-designer-heading h2 {
+    font-size: 25px;
+  }
+
+  .add-designer-heading p {
+    font-size: 16px;
+
+    margin-bottom: 28px;
+  }
+
+  .designer-form {
+    grid-template-columns: 1fr;
+
+    row-gap: 22px;
+  }
+
+  .form-group input,
+  .form-group select {
+    height: 53px;
+
+    font-size: 17px;
+  }
+
+  .form-submit {
+    margin-top: 5px;
+  }
+
+  .create-lead-button {
+    width: 100%;
+
+    height: 53px;
+
+    font-size: 17px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .crm-page-title {
+    font-size: 22px;
+  }
+
+  .crm-page-description {
+    font-size: 13px;
+  }
+
+  .crm-user {
+    overflow: hidden;
+  }
+
+  .crm-user-name {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+  }
+
+  .crm-admin {
+    min-width: 65px;
+
+    padding: 0 10px;
+  }
+
+  .designer-name-line {
+    gap: 7px;
+  }
+
+  .status-pill,
+  .tier-pill,
+  .kyc-pill {
+    font-size: 12px;
+
+    padding: 4px 9px;
+  }
+}
