@@ -972,13 +972,6 @@ export default function DesignerPortal() {
               Storefront layer.
             </p>
 
-            <Link
-              to="/storefront"
-              className="storefront-link"
-            >
-              Go to Storefront
-            </Link>
-
           </div>
 
         </section>

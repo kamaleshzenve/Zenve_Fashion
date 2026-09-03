@@ -1,5 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Delivery.css";
+
+/* =========================================================
+   SKU DATA
+========================================================= */
 
 const skuData = [
   {
@@ -28,6 +33,10 @@ const skuData = [
   },
 ];
 
+/* =========================================================
+   SEARCH ICON
+========================================================= */
+
 function SearchIcon() {
   return (
     <svg
@@ -42,6 +51,10 @@ function SearchIcon() {
     </svg>
   );
 }
+
+/* =========================================================
+   USER ICON
+========================================================= */
 
 function UserIcon() {
   return (
@@ -58,6 +71,10 @@ function UserIcon() {
   );
 }
 
+/* =========================================================
+   CHEVRON DOWN
+========================================================= */
+
 function ChevronDown() {
   return (
     <svg
@@ -72,13 +89,21 @@ function ChevronDown() {
   );
 }
 
+/* =========================================================
+   DELIVERY TOGGLE
+========================================================= */
+
 function DeliveryToggle({ enabled, onChange }) {
   return (
     <button
       type="button"
       className={`delivery-toggle ${enabled ? "active" : ""}`}
       onClick={onChange}
-      aria-label={enabled ? "Disable fast delivery" : "Enable fast delivery"}
+      aria-label={
+        enabled
+          ? "Disable fast delivery"
+          : "Enable fast delivery"
+      }
       aria-pressed={enabled}
     >
       <span className="delivery-toggle-knob" />
@@ -86,8 +111,26 @@ function DeliveryToggle({ enabled, onChange }) {
   );
 }
 
+/* =========================================================
+   DELIVERY ENGINE
+========================================================= */
+
 export default function DeliveryEngine() {
+  /* =======================================================
+     NAVIGATION
+  ======================================================= */
+
+  const navigate = useNavigate();
+
+  /* =======================================================
+     PINCODE
+  ======================================================= */
+
   const [pincode, setPincode] = useState("400001");
+
+  /* =======================================================
+     FAST FLAGS
+  ======================================================= */
 
   const [fastFlags, setFastFlags] = useState({
     "ZNV-AAR-POC-DOGKURTA-IVORY-M": true,
@@ -95,12 +138,20 @@ export default function DeliveryEngine() {
     "ZNV-IRA-PEV-CATHARNESS-AQUA-L": true,
   });
 
+  /* =======================================================
+     TOGGLE FAST FLAG
+  ======================================================= */
+
   const toggleFastFlag = (sku) => {
     setFastFlags((previous) => ({
       ...previous,
       [sku]: !previous[sku],
     }));
   };
+
+  /* =======================================================
+     GET PROMISE
+  ======================================================= */
 
   const getPromise = (item) => {
     if (!fastFlags[item.sku]) {
@@ -121,16 +172,37 @@ export default function DeliveryEngine() {
     return "≤ 3 working days";
   };
 
+  /* =======================================================
+     FAST CITY
+  ======================================================= */
+
   const isFastCity =
-    pincode.startsWith("400") || pincode.startsWith("560");
+    pincode.startsWith("400") ||
+    pincode.startsWith("560");
+
+  /* =======================================================
+     FAST ELIGIBLE COUNT
+  ======================================================= */
 
   const fastEligibleCount = skuData.filter(
-    (item) => fastFlags[item.sku] && item.available > 0
+    (item) =>
+      fastFlags[item.sku] &&
+      item.available > 0
   ).length;
 
+  /* =======================================================
+     RISK COUNT
+  ======================================================= */
+
   const riskCount = skuData.filter(
-    (item) => fastFlags[item.sku] && item.available === 0
+    (item) =>
+      fastFlags[item.sku] &&
+      item.available === 0
   ).length;
+
+  /* =======================================================
+     PAGE
+  ======================================================= */
 
   return (
     <div className="delivery-page">
@@ -144,57 +216,104 @@ export default function DeliveryEngine() {
         <div className="delivery-header-inner">
 
           {/* Logo */}
-          <div className="delivery-logo-wrapper">
-            {/*<div className="delivery-logo">*/}
-            {/*  <div className="delivery-logo-mark">Z</div>*/}
 
-            {/*  <div className="delivery-logo-text">*/}
-            {/*    ZENVE*/}
-            {/*    <span>FASHION</span>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
+          <div className="delivery-logo-wrapper">
+
+            {/*
+            <div className="delivery-logo">
+
+              <div className="delivery-logo-mark">
+                Z
+              </div>
+
+              <div className="delivery-logo-text">
+                ZENVE
+                <span>FASHION</span>
+              </div>
+
+            </div>
+            */}
+
           </div>
 
           {/* Header content */}
+
           <div className="delivery-header-content">
 
-            <div className="delivery-back">
-              <span className="delivery-back-arrow">←</span>
-              <span>ALL 12 LAYERS</span>
-            </div>
+            {/* =================================================
+                BACK / ALL 12 LAYERS
+            ================================================= */}
+
+            <button
+              type="button"
+              className="delivery-back"
+              onClick={() => navigate("/")}
+            >
+              <span className="delivery-back-arrow">
+                ←
+              </span>
+
+              <span>
+                ALL 12 LAYERS
+              </span>
+            </button>
+
+            {/* =================================================
+                TITLE ROW
+            ================================================= */}
 
             <div className="delivery-title-row">
 
               <div className="delivery-title-block">
 
                 <h1>
-                  <span className="delivery-number">08</span>
+
+                  <span className="delivery-number">
+                    08
+                  </span>
+
                   Delivery Engine
+
                 </h1>
 
                 <p>
-                  Logistics layer · Pincode, ETA, 60-min eligibility,
-                  3-day target
+                  Logistics layer · Pincode, ETA,
+                  60-min eligibility, 3-day target
                 </p>
 
               </div>
 
-              {/* Header actions */}
+              {/* =================================================
+                  HEADER ACTIONS
+              ================================================= */}
+
               <div className="delivery-header-actions">
 
+                {/* Search */}
+
                 <div className="delivery-search-box">
+
                   <SearchIcon />
 
-                  <span>Search everything</span>
+                  <span>
+                    Search everything
+                  </span>
 
-                  <kbd>⌘K</kbd>
+                  <kbd>
+                    ⌘K
+                  </kbd>
+
                 </div>
+
+                {/* User */}
 
                 <div className="delivery-user-box">
 
                   <UserIcon />
 
-                  <span>Priya Raghavan</span>
+                  <span>
+                    Priya Raghavan
+                  </span>
 
                   <span className="delivery-admin">
                     Admin
@@ -218,11 +337,15 @@ export default function DeliveryEngine() {
 
       <main className="delivery-main">
 
-        {/* =================================================
+        {/* ===================================================
             STAT CARDS
-        ================================================= */}
+        =================================================== */}
 
         <section className="delivery-stats">
+
+          {/* =================================================
+              ZONE
+          ================================================= */}
 
           <article className="delivery-stat-card">
 
@@ -231,7 +354,9 @@ export default function DeliveryEngine() {
             </div>
 
             <div className="delivery-stat-value delivery-zone-value">
-              {isFastCity ? "Fast city" : "Serviceable"}
+              {isFastCity
+                ? "Fast city"
+                : "Serviceable"}
             </div>
 
             <div className="delivery-stat-description">
@@ -239,6 +364,10 @@ export default function DeliveryEngine() {
             </div>
 
           </article>
+
+          {/* =================================================
+              FAST ELIGIBLE SKUS
+          ================================================= */}
 
           <article className="delivery-stat-card">
 
@@ -255,6 +384,10 @@ export default function DeliveryEngine() {
             </div>
 
           </article>
+
+          {/* =================================================
+              FAST FLAG AT RISK
+          ================================================= */}
 
           <article className="delivery-stat-card">
 
@@ -289,11 +422,16 @@ export default function DeliveryEngine() {
               </h2>
 
               <p>
-                Rule chain: pincode → serviceable → nearest eligible
-                location → SKU available → fast flag → live ETA.
+                Rule chain: pincode → serviceable →
+                nearest eligible location → SKU available →
+                fast flag → live ETA.
               </p>
 
             </div>
+
+            {/* =================================================
+                PINCODE
+            ================================================= */}
 
             <div className="delivery-pincode">
 
@@ -309,7 +447,10 @@ export default function DeliveryEngine() {
                 value={pincode}
                 onChange={(event) =>
                   setPincode(
-                    event.target.value.replace(/\D/g, "")
+                    event.target.value.replace(
+                      /\D/g,
+                      ""
+                    )
                   )
                 }
               />
@@ -318,43 +459,64 @@ export default function DeliveryEngine() {
 
           </div>
 
-          {/* Desktop table */}
+          {/* =================================================
+              DESKTOP TABLE
+          ================================================= */}
+
           <div className="delivery-table-wrapper">
 
             <div className="delivery-table">
 
-              {/* Table header */}
+              {/* =================================================
+                  TABLE HEADER
+              ================================================= */}
 
               <div className="delivery-table-row delivery-table-head">
 
-                <div>SKU</div>
+                <div>
+                  SKU
+                </div>
 
-                <div>STOCKING LOCATION</div>
+                <div>
+                  STOCKING LOCATION
+                </div>
 
-                <div>AVAILABLE</div>
+                <div>
+                  AVAILABLE
+                </div>
 
-                <div>FAST FLAG</div>
+                <div>
+                  FAST FLAG
+                </div>
 
-                <div>PROMISE</div>
+                <div>
+                  PROMISE
+                </div>
 
               </div>
 
-              {/* Rows */}
+              {/* =================================================
+                  TABLE ROWS
+              ================================================= */}
 
               {skuData.map((item) => {
 
-                const promise = getPromise(item);
+                const promise =
+                  getPromise(item);
 
                 const is60Minutes =
                   promise === "60 minutes";
 
                 return (
+
                   <div
                     className="delivery-table-row delivery-product-row"
                     key={item.sku}
                   >
 
-                    {/* SKU */}
+                    {/* =================================================
+                        SKU
+                    ================================================= */}
 
                     <div className="delivery-product-cell">
 
@@ -368,32 +530,44 @@ export default function DeliveryEngine() {
 
                     </div>
 
-                    {/* Location */}
+                    {/* =================================================
+                        LOCATION
+                    ================================================= */}
 
                     <div className="delivery-location">
                       {item.location}
                     </div>
 
-                    {/* Available */}
+                    {/* =================================================
+                        AVAILABLE
+                    ================================================= */}
 
                     <div className="delivery-available">
                       {item.available}
                     </div>
 
-                    {/* Fast flag */}
+                    {/* =================================================
+                        FAST FLAG
+                    ================================================= */}
 
                     <div className="delivery-fast-control">
 
                       <DeliveryToggle
-                        enabled={fastFlags[item.sku]}
+                        enabled={
+                          fastFlags[item.sku]
+                        }
                         onChange={() =>
-                          toggleFastFlag(item.sku)
+                          toggleFastFlag(
+                            item.sku
+                          )
                         }
                       />
 
                     </div>
 
-                    {/* Promise */}
+                    {/* =================================================
+                        PROMISE
+                    ================================================= */}
 
                     <div className="delivery-promise-cell">
 
@@ -410,29 +584,39 @@ export default function DeliveryEngine() {
                     </div>
 
                   </div>
+
                 );
+
               })}
 
             </div>
 
           </div>
 
-          {/* Mobile cards */}
+          {/* =================================================
+              MOBILE CARDS
+          ================================================= */}
 
           <div className="delivery-mobile-products">
 
             {skuData.map((item) => {
 
-              const promise = getPromise(item);
+              const promise =
+                getPromise(item);
 
               const is60Minutes =
                 promise === "60 minutes";
 
               return (
+
                 <article
                   className="delivery-mobile-card"
                   key={item.sku}
                 >
+
+                  {/* =================================================
+                      MOBILE CARD TOP
+                  ================================================= */}
 
                   <div className="delivery-mobile-card-top">
 
@@ -460,25 +644,50 @@ export default function DeliveryEngine() {
 
                   </div>
 
+                  {/* =================================================
+                      MOBILE INFO
+                  ================================================= */}
+
                   <div className="delivery-mobile-info">
 
                     <div>
-                      <span>STOCKING LOCATION</span>
-                      <strong>{item.location}</strong>
+
+                      <span>
+                        STOCKING LOCATION
+                      </span>
+
+                      <strong>
+                        {item.location}
+                      </strong>
+
                     </div>
 
                     <div>
-                      <span>AVAILABLE</span>
-                      <strong>{item.available}</strong>
+
+                      <span>
+                        AVAILABLE
+                      </span>
+
+                      <strong>
+                        {item.available}
+                      </strong>
+
                     </div>
 
                     <div>
-                      <span>FAST FLAG</span>
+
+                      <span>
+                        FAST FLAG
+                      </span>
 
                       <DeliveryToggle
-                        enabled={fastFlags[item.sku]}
+                        enabled={
+                          fastFlags[item.sku]
+                        }
                         onChange={() =>
-                          toggleFastFlag(item.sku)
+                          toggleFastFlag(
+                            item.sku
+                          )
                         }
                       />
 
@@ -487,7 +696,9 @@ export default function DeliveryEngine() {
                   </div>
 
                 </article>
+
               );
+
             })}
 
           </div>
@@ -507,43 +718,85 @@ export default function DeliveryEngine() {
             </h2>
 
             <p>
-              What the business is allowed to show a customer.
+              What the business is allowed to
+              show a customer.
             </p>
 
           </div>
 
+          {/* =================================================
+              POLICY GRID
+          ================================================= */}
+
           <div className="delivery-policy-grid">
 
-            <div className="delivery-policy-item">
-              <span>•</span>
-              <p>
-                60 minutes applies only to fast-flagged stock
-                inside Mumbai (400xxx) and Bangalore (560xxx).
-              </p>
-            </div>
+            {/* =================================================
+                POLICY 1
+            ================================================= */}
 
             <div className="delivery-policy-item">
-              <span>•</span>
+
+              <span>
+                •
+              </span>
+
               <p>
-                Every other serviceable pincode shows a
-                ≤ 3 working-day target.
+                60 minutes applies only to
+                fast-flagged stock inside Mumbai
+                (400xxx) and Bangalore (560xxx).
               </p>
+
             </div>
 
-            <div className="delivery-policy-item">
-              <span>•</span>
-              <p>
-                Zero available units removes the fast promise
-                automatically.
-              </p>
-            </div>
+            {/* =================================================
+                POLICY 2
+            ================================================= */}
 
             <div className="delivery-policy-item">
-              <span>•</span>
+
+              <span>
+                •
+              </span>
+
               <p>
-                Designer-studio stock never carries the
-                60-minute promise.
+                Every other serviceable pincode
+                shows a ≤ 3 working-day target.
               </p>
+
+            </div>
+
+            {/* =================================================
+                POLICY 3
+            ================================================= */}
+
+            <div className="delivery-policy-item">
+
+              <span>
+                •
+              </span>
+
+              <p>
+                Zero available units removes the
+                fast promise automatically.
+              </p>
+
+            </div>
+
+            {/* =================================================
+                POLICY 4
+            ================================================= */}
+
+            <div className="delivery-policy-item">
+
+              <span>
+                •
+              </span>
+
+              <p>
+                Designer-studio stock never carries
+                the 60-minute promise.
+              </p>
+
             </div>
 
           </div>

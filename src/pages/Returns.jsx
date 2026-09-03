@@ -1,8 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Returns.css";
 
 /* =====================================================
-   ICONS
+  ICONS
 ===================================================== */
 
 function SearchIcon() {
@@ -51,59 +52,107 @@ function ArrowLeftIcon() {
 }
 
 /* =====================================================
-   HEADER
+  HEADER
 ===================================================== */
 
 function ReturnsHeader() {
+  const navigate = useNavigate();
+
+  /* ===================================================
+     ALL 12 LAYERS / BACK BUTTON
+  =================================================== */
+
+  const handleBackClick = () => {
+    navigate(-1);
+  };
+
   return (
     <header className="returns-header">
 
       {/* Logo */}
       <div className="returns-logo-area">
+
         <div className="returns-logo-mark">
-          {/*<div className="returns-logo-z">Z</div>*/}
 
-          {/*<div className="returns-logo-text">*/}
-          {/*  ZENVE*/}
-          {/*</div>*/}
+          {/*
+          <div className="returns-logo-z">
+            Z
+          </div>
+          */}
 
-          {/*<div className="returns-logo-subtext">*/}
-          {/*  FASHION*/}
-          {/*</div>*/}
+          {/*
+          <div className="returns-logo-text">
+            ZENVE
+          </div>
+          */}
+
+          {/*
+          <div className="returns-logo-subtext">
+            FASHION
+          </div>
+          */}
+
         </div>
+
       </div>
 
       {/* Main header content */}
       <div className="returns-header-content">
 
-        <div className="returns-back">
+        {/* =================================================
+            CLICKABLE ALL 12 LAYERS BUTTON
+        ================================================= */}
+
+        <button
+          type="button"
+          className="returns-back"
+          onClick={handleBackClick}
+          aria-label="Go back to all 12 layers"
+        >
           <ArrowLeftIcon />
-          <span>ALL 12 LAYERS</span>
-        </div>
+
+          <span>
+            ALL 12 LAYERS
+          </span>
+        </button>
 
         <div className="returns-title-row">
-          <span className="returns-layer-number">09</span>
 
-          <h1>Returns Engine</h1>
+          <span className="returns-layer-number">
+            09
+          </span>
+
+          <h1>
+            Returns Engine
+          </h1>
+
         </div>
 
         <p className="returns-subtitle">
           Returns layer · Request, pickup, inspection, refund / exchange
         </p>
+
       </div>
 
       {/* Header right controls */}
       <div className="returns-header-actions">
 
         <div className="returns-search">
+
           <SearchIcon />
 
-          <span>Search everything</span>
+          <span>
+            Search everything
+          </span>
 
-          <kbd>⌘K</kbd>
+          <kbd>
+            ⌘K
+          </kbd>
+
         </div>
 
         <div className="returns-profile">
+
           <UserIcon />
 
           <span className="returns-user-name">
@@ -113,15 +162,17 @@ function ReturnsHeader() {
           <span className="returns-admin">
             Admin
           </span>
+
         </div>
 
       </div>
+
     </header>
   );
 }
 
 /* =====================================================
-   STAT CARD
+  STAT CARD
 ===================================================== */
 
 function StatCard({ label, value }) {
@@ -141,7 +192,7 @@ function StatCard({ label, value }) {
 }
 
 /* =====================================================
-   EMPTY STATE
+  EMPTY STATE
 ===================================================== */
 
 function EmptyState({ children }) {
@@ -153,7 +204,7 @@ function EmptyState({ children }) {
 }
 
 /* =====================================================
-   RAISE RETURN
+  RAISE RETURN
 ===================================================== */
 
 function RaiseReturnSection() {
@@ -161,11 +212,15 @@ function RaiseReturnSection() {
     <section className="returns-panel raise-return-panel">
 
       <div className="returns-section-heading">
-        <h2>Raise a return</h2>
+
+        <h2>
+          Raise a return
+        </h2>
 
         <p>
           Only delivered orders and returnable SKUs pass the policy check.
         </p>
+
       </div>
 
       <EmptyState>
@@ -177,7 +232,7 @@ function RaiseReturnSection() {
 }
 
 /* =====================================================
-   RETURN WORKFLOW
+  RETURN WORKFLOW
 ===================================================== */
 
 function ReturnWorkflowSection() {
@@ -185,12 +240,16 @@ function ReturnWorkflowSection() {
     <section className="returns-panel workflow-panel">
 
       <div className="returns-section-heading">
-        <h2>Return workflow</h2>
+
+        <h2>
+          Return workflow
+        </h2>
 
         <p>
           Requested → pickup → received → inspected → refunded.
           Inspection decides whether stock becomes sellable again.
         </p>
+
       </div>
 
       <EmptyState>
@@ -202,7 +261,7 @@ function ReturnWorkflowSection() {
 }
 
 /* =====================================================
-   MAIN RETURNS PAGE
+  MAIN RETURNS PAGE
 ===================================================== */
 
 function Returns() {
@@ -262,8 +321,8 @@ function Returns() {
 }
 
 /* =====================================================
-   IMPORTANT:
-   DEFAULT EXPORT
+  IMPORTANT:
+  DEFAULT EXPORT
 ===================================================== */
 
 export default Returns;

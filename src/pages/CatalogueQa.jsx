@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
-import "../styles/CatalogueQa.css"
+import { useNavigate } from "react-router-dom";
+import "../styles/CatalogueQa.css";
 
 /* =========================================================
    CATALOGUE QA DATA
@@ -100,7 +101,11 @@ function SearchIcon() {
       viewBox="0 0 24 24"
       aria-hidden="true"
     >
-      <circle cx="11" cy="11" r="6.5" />
+      <circle
+        cx="11"
+        cy="11"
+        r="6.5"
+      />
       <path d="M16 16l5 5" />
     </svg>
   );
@@ -113,7 +118,11 @@ function UserIcon() {
       viewBox="0 0 24 24"
       aria-hidden="true"
     >
-      <circle cx="12" cy="8" r="3.5" />
+      <circle
+        cx="12"
+        cy="8"
+        r="3.5"
+      />
       <path d="M5.5 20c.7-3.5 2.8-5.3 6.5-5.3s5.8 1.8 6.5 5.3" />
     </svg>
   );
@@ -136,7 +145,10 @@ function ArrowLeft() {
    STATUS BADGE
 ========================================================= */
 
-function StatusBadge({ children, type = "pending" }) {
+function StatusBadge({
+  children,
+  type = "pending",
+}) {
   return (
     <span className={`cqa-status-badge ${type}`}>
       {children}
@@ -149,43 +161,61 @@ function StatusBadge({ children, type = "pending" }) {
 ========================================================= */
 
 function CatalogueHeader() {
+  const navigate = useNavigate();
+
   return (
     <header className="cqa-header">
       <div className="cqa-header-inner">
 
-        {/*/!* BRAND *!/*/}
-        {/*<div className="cqa-brand">*/}
-        {/*  <div className="cqa-logo-placeholder">*/}
-        {/*    <div className="cqa-logo-mark">*/}
-        {/*      ZENVE*/}
-        {/*    </div>*/}
-        {/*    <span>FASHION</span>*/}
-        {/*  </div>*/}
-        {/*</div>*/}
+        {/* BRAND */}
+
+        {/*
+        <div className="cqa-brand">
+          <div className="cqa-logo-placeholder">
+            <div className="cqa-logo-mark">
+              ZENVE
+            </div>
+            <span>FASHION</span>
+          </div>
+        </div>
+        */}
 
         {/* MAIN HEADER */}
+
         <div className="cqa-header-main">
 
           <div className="cqa-header-top">
 
             {/* BACK */}
-            <button className="cqa-back-button">
+
+            <button
+              type="button"
+              className="cqa-back-button"
+              onClick={() => navigate("/")}
+            >
               <ArrowLeft />
               <span>ALL 12 LAYERS</span>
             </button>
 
             {/* ACTIONS */}
+
             <div className="cqa-header-actions">
 
-              <button className="cqa-global-search">
+              <button
+                type="button"
+                className="cqa-global-search"
+              >
                 <SearchIcon />
 
-                <span>Search everything</span>
+                <span>
+                  Search everything
+                </span>
 
                 <kbd>⌘K</kbd>
               </button>
 
               <div className="cqa-profile">
+
                 <UserIcon />
 
                 <span className="cqa-profile-name">
@@ -195,13 +225,16 @@ function CatalogueHeader() {
                 <span className="cqa-admin">
                   Admin
                 </span>
+
               </div>
 
             </div>
           </div>
 
           {/* PAGE TITLE */}
+
           <div className="cqa-page-heading">
+
             <h1>
               <span>04</span> Catalogue QA
             </h1>
@@ -209,6 +242,7 @@ function CatalogueHeader() {
             <p>
               QA layer · Validation, approval, audit trail
             </p>
+
           </div>
 
         </div>
@@ -221,32 +255,48 @@ function CatalogueHeader() {
    STATISTICS
 ========================================================= */
 
-function Statistics() {
+function Statistics({
+  queueCount,
+  reviewed,
+}) {
+  const approvedCount = reviewed.filter(
+    (item) => item.status === "APPROVED"
+  ).length;
+
+  const rejectedCount = reviewed.filter(
+    (item) => item.status === "REJECTED"
+  ).length;
+
   const stats = [
     {
       label: "IN QUEUE",
-      value: "3",
-      description: "Awaiting a score",
+      value: String(queueCount),
+      description:
+        queueCount > 0
+          ? "Awaiting a score"
+          : "",
     },
     {
       label: "APPROVED",
-      value: "3",
+      value: String(approvedCount),
       description: "",
     },
     {
       label: "REJECTED",
-      value: "0",
+      value: String(rejectedCount),
       description: "",
     },
   ];
 
   return (
     <section className="cqa-statistics">
+
       {stats.map((item) => (
         <article
           className="cqa-stat-card"
           key={item.label}
         >
+
           <span className="cqa-stat-label">
             {item.label}
           </span>
@@ -260,8 +310,10 @@ function Statistics() {
               {item.description}
             </span>
           )}
+
         </article>
       ))}
+
     </section>
   );
 }
@@ -282,9 +334,12 @@ function QAReviewCard({
     <article className="cqa-review-card">
 
       {/* CARD TITLE */}
+
       <div className="cqa-review-title-row">
 
-        <h3>{item.name}</h3>
+        <h3>
+          {item.name}
+        </h3>
 
         <StatusBadge type="pending">
           {item.status}
@@ -293,12 +348,15 @@ function QAReviewCard({
       </div>
 
       {/* SKU */}
+
       <div className="cqa-sku-code">
         {item.sku}
       </div>
 
       {/* PRODUCT SUMMARY */}
+
       <div className="cqa-product-summary">
+
         {item.designer}
         {" · "}
         {item.category}
@@ -310,38 +368,49 @@ function QAReviewCard({
         {item.price}
         {" · "}
         {item.location}
+
       </div>
 
       {/* CHECKLIST */}
+
       <div className="cqa-check-grid">
 
         <div className="cqa-check-column">
-          {item.checks.slice(0, 3).map((check) => (
-            <div
-              className="cqa-check-item"
-              key={check}
-            >
-              <span>•</span>
-              {check}
-            </div>
-          ))}
+
+          {item.checks
+            .slice(0, 3)
+            .map((check) => (
+              <div
+                className="cqa-check-item"
+                key={check}
+              >
+                <span>•</span>
+                {check}
+              </div>
+            ))}
+
         </div>
 
         <div className="cqa-check-column">
-          {item.checks.slice(3).map((check) => (
-            <div
-              className="cqa-check-item"
-              key={check}
-            >
-              <span>•</span>
-              {check}
-            </div>
-          ))}
+
+          {item.checks
+            .slice(3)
+            .map((check) => (
+              <div
+                className="cqa-check-item"
+                key={check}
+              >
+                <span>•</span>
+                {check}
+              </div>
+            ))}
+
         </div>
 
       </div>
 
       {/* ACTIONS */}
+
       <div className="cqa-review-actions">
 
         <input
@@ -349,12 +418,15 @@ function QAReviewCard({
           min="0"
           max="100"
           value={score}
-          onChange={(e) => setScore(e.target.value)}
+          onChange={(e) =>
+            setScore(e.target.value)
+          }
           placeholder="QA score"
           className="cqa-score-input"
         />
 
         <button
+          type="button"
           className="cqa-submit-button"
           onClick={() => onSubmit(item)}
         >
@@ -362,20 +434,27 @@ function QAReviewCard({
         </button>
 
         <button
+          type="button"
           className="cqa-secondary-button"
-          onClick={() => onQuickApprove(item)}
+          onClick={() =>
+            onQuickApprove(item)
+          }
         >
           Quick approve (95)
         </button>
 
         <button
+          type="button"
           className="cqa-secondary-button"
-          onClick={() => onQuickReject(item)}
+          onClick={() =>
+            onQuickReject(item)
+          }
         >
           Quick reject (60)
         </button>
 
       </div>
+
     </article>
   );
 }
@@ -384,7 +463,9 @@ function QAReviewCard({
    REVIEWED SKU
 ========================================================= */
 
-function ReviewedSKUs({ reviewed }) {
+function ReviewedSKUs({
+  reviewed,
+}) {
   return (
     <section className="cqa-section-card">
 
@@ -395,6 +476,7 @@ function ReviewedSKUs({ reviewed }) {
       <div className="cqa-reviewed-list">
 
         {reviewed.map((item) => (
+
           <div
             className="cqa-reviewed-row"
             key={item.id}
@@ -412,14 +494,24 @@ function ReviewedSKUs({ reviewed }) {
               Score {item.score}
             </div>
 
-            <StatusBadge type="approved">
+            <StatusBadge
+              type={
+                item.status === "APPROVED"
+                  ? "approved"
+                  : item.status === "REJECTED"
+                    ? "rejected"
+                    : "correction"
+              }
+            >
               {item.status}
             </StatusBadge>
 
           </div>
+
         ))}
 
       </div>
+
     </section>
   );
 }
@@ -428,7 +520,9 @@ function ReviewedSKUs({ reviewed }) {
    AUDIT TRAIL
 ========================================================= */
 
-function AuditTrail() {
+function AuditTrail({
+  auditTrail,
+}) {
   return (
     <section className="cqa-section-card cqa-audit-section">
 
@@ -440,9 +534,60 @@ function AuditTrail() {
         Every QA decision is timestamped.
       </p>
 
-      <div className="cqa-empty-audit">
-        No QA decisions recorded yet
-      </div>
+      {auditTrail.length === 0 ? (
+
+        <div className="cqa-empty-audit">
+          No QA decisions recorded yet
+        </div>
+
+      ) : (
+
+        <div className="cqa-audit-list">
+
+          {auditTrail.map((item) => (
+
+            <div
+              className="cqa-audit-row"
+              key={item.id}
+            >
+
+              <div>
+                <strong>
+                  {item.name}
+                </strong>
+
+                <span>
+                  {item.sku}
+                </span>
+              </div>
+
+              <div>
+                Score {item.score}
+              </div>
+
+              <StatusBadge
+                type={
+                  item.status === "APPROVED"
+                    ? "approved"
+                    : item.status === "REJECTED"
+                      ? "rejected"
+                      : "correction"
+                }
+              >
+                {item.status}
+              </StatusBadge>
+
+              <time>
+                {item.timestamp}
+              </time>
+
+            </div>
+
+          ))}
+
+        </div>
+
+      )}
 
     </section>
   );
@@ -454,45 +599,160 @@ function AuditTrail() {
 
 export default function CatalogueQA() {
 
-  const [queue, setQueue] = useState(initialQueue);
-  const [reviewed, setReviewed] = useState(initialReviewed);
-  const [scores, setScores] = useState({});
-  const [search, setSearch] = useState("");
+  const [queue, setQueue] =
+    useState(initialQueue);
+
+  const [reviewed, setReviewed] =
+    useState(initialReviewed);
+
+  const [scores, setScores] =
+    useState({});
+
+  const [search, setSearch] =
+    useState("");
+
+  const [auditTrail, setAuditTrail] =
+    useState([]);
+
+  /* =======================================================
+     FILTER QUEUE
+  ======================================================= */
 
   const filteredQueue = useMemo(() => {
-    const keyword = search.trim().toLowerCase();
+
+    const keyword =
+      search.trim().toLowerCase();
 
     if (!keyword) {
       return queue;
     }
 
     return queue.filter((item) => {
+
       return (
-        item.name.toLowerCase().includes(keyword) ||
-        item.sku.toLowerCase().includes(keyword) ||
-        item.designer.toLowerCase().includes(keyword) ||
-        item.category.toLowerCase().includes(keyword) ||
-        item.colour.toLowerCase().includes(keyword)
+        item.name
+          .toLowerCase()
+          .includes(keyword) ||
+
+        item.sku
+          .toLowerCase()
+          .includes(keyword) ||
+
+        item.designer
+          .toLowerCase()
+          .includes(keyword) ||
+
+        item.category
+          .toLowerCase()
+          .includes(keyword) ||
+
+        item.colour
+          .toLowerCase()
+          .includes(keyword)
       );
+
     });
+
   }, [queue, search]);
 
-  const handleScoreChange = (id, value) => {
+  /* =======================================================
+     SCORE CHANGE
+  ======================================================= */
+
+  const handleScoreChange = (
+    id,
+    value
+  ) => {
+
     setScores((previous) => ({
       ...previous,
       [id]: value,
     }));
+
   };
 
+  /* =======================================================
+     REMOVE FROM QUEUE
+  ======================================================= */
+
+  const removeFromQueue = (item) => {
+
+    setQueue((previous) =>
+      previous.filter(
+        (queueItem) =>
+          queueItem.id !== item.id
+      )
+    );
+
+    setScores((previous) => {
+
+      const updated = {
+        ...previous,
+      };
+
+      delete updated[item.id];
+
+      return updated;
+
+    });
+
+  };
+
+  /* =======================================================
+     ADD AUDIT ENTRY
+  ======================================================= */
+
+  const addAuditEntry = (
+    item,
+    score,
+    status
+  ) => {
+
+    const auditItem = {
+      id:
+        Date.now() +
+        Math.random(),
+
+      name: item.name,
+
+      sku: item.sku,
+
+      score,
+
+      status,
+
+      timestamp:
+        new Date().toLocaleString(),
+    };
+
+    setAuditTrail((previous) => [
+      auditItem,
+      ...previous,
+    ]);
+
+  };
+
+  /* =======================================================
+     SUBMIT REVIEW
+  ======================================================= */
+
   const handleSubmit = (item) => {
-    const enteredScore = Number(scores[item.id]);
+
+    const enteredScore =
+      Number(scores[item.id]);
 
     if (
       Number.isNaN(enteredScore) ||
+      scores[item.id] === undefined ||
+      scores[item.id] === "" ||
       enteredScore < 0 ||
       enteredScore > 100
     ) {
-      window.alert("Please enter a QA score between 0 and 100.");
+
+      window.alert(
+        "Please enter a QA score between 0 and 100."
+      );
+
       return;
     }
 
@@ -504,11 +764,19 @@ export default function CatalogueQA() {
           : "REJECTED";
 
     const reviewedItem = {
-      id: Date.now(),
+
+      id:
+        Date.now() +
+        Math.random(),
+
       name: item.name,
+
       sku: item.sku,
+
       score: enteredScore,
+
       status,
+
     };
 
     setReviewed((previous) => [
@@ -516,24 +784,36 @@ export default function CatalogueQA() {
       reviewedItem,
     ]);
 
-    setQueue((previous) =>
-      previous.filter((queueItem) => queueItem.id !== item.id)
+    addAuditEntry(
+      item,
+      enteredScore,
+      status
     );
 
-    setScores((previous) => {
-      const updated = { ...previous };
-      delete updated[item.id];
-      return updated;
-    });
+    removeFromQueue(item);
+
   };
+
+  /* =======================================================
+     QUICK APPROVE
+  ======================================================= */
 
   const handleQuickApprove = (item) => {
+
     const reviewedItem = {
-      id: Date.now(),
+
+      id:
+        Date.now() +
+        Math.random(),
+
       name: item.name,
+
       sku: item.sku,
+
       score: 95,
+
       status: "APPROVED",
+
     };
 
     setReviewed((previous) => [
@@ -541,18 +821,36 @@ export default function CatalogueQA() {
       reviewedItem,
     ]);
 
-    setQueue((previous) =>
-      previous.filter((queueItem) => queueItem.id !== item.id)
+    addAuditEntry(
+      item,
+      95,
+      "APPROVED"
     );
+
+    removeFromQueue(item);
+
   };
+
+  /* =======================================================
+     QUICK REJECT
+  ======================================================= */
 
   const handleQuickReject = (item) => {
+
     const reviewedItem = {
-      id: Date.now(),
+
+      id:
+        Date.now() +
+        Math.random(),
+
       name: item.name,
+
       sku: item.sku,
+
       score: 60,
+
       status: "REJECTED",
+
     };
 
     setReviewed((previous) => [
@@ -560,12 +858,22 @@ export default function CatalogueQA() {
       reviewedItem,
     ]);
 
-    setQueue((previous) =>
-      previous.filter((queueItem) => queueItem.id !== item.id)
+    addAuditEntry(
+      item,
+      60,
+      "REJECTED"
     );
+
+    removeFromQueue(item);
+
   };
 
+  /* =======================================================
+     RETURN
+  ======================================================= */
+
   return (
+
     <div className="catalogue-qa-page">
 
       <CatalogueHeader />
@@ -573,26 +881,36 @@ export default function CatalogueQA() {
       <main className="cqa-main">
 
         {/* STATISTICS */}
-        <Statistics />
+
+        <Statistics
+          queueCount={queue.length}
+          reviewed={reviewed}
+        />
 
         {/* QA QUEUE */}
+
         <section className="cqa-queue-card">
 
           <div className="cqa-queue-header">
 
             <div>
-              <h2>QA queue</h2>
+
+              <h2>
+                QA queue
+              </h2>
 
               <p>
                 Score bands: 90–100 approve ·
                 75–89 correction ·
                 below 75 reject.
               </p>
+
             </div>
 
           </div>
 
           {/* SEARCH */}
+
           <div className="cqa-queue-search">
 
             <SearchIcon />
@@ -601,36 +919,66 @@ export default function CatalogueQA() {
               type="text"
               placeholder="Search SKU, name, colour..."
               value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={(e) =>
+                setSearch(e.target.value)
+              }
             />
 
           </div>
 
           {/* QUEUE LIST */}
+
           <div className="cqa-queue-list">
 
             {filteredQueue.length > 0 ? (
+
               filteredQueue.map((item) => (
+
                 <QAReviewCard
                   key={item.id}
                   item={item}
-                  score={scores[item.id] || ""}
-                  setScore={(value) =>
-                    handleScoreChange(item.id, value)
+
+                  score={
+                    scores[item.id] || ""
                   }
-                  onSubmit={handleSubmit}
-                  onQuickApprove={handleQuickApprove}
-                  onQuickReject={handleQuickReject}
+
+                  setScore={(value) =>
+                    handleScoreChange(
+                      item.id,
+                      value
+                    )
+                  }
+
+                  onSubmit={
+                    handleSubmit
+                  }
+
+                  onQuickApprove={
+                    handleQuickApprove
+                  }
+
+                  onQuickReject={
+                    handleQuickReject
+                  }
                 />
+
               ))
+
             ) : (
+
               <div className="cqa-no-results">
-                <h3>No SKUs found</h3>
+
+                <h3>
+                  No SKUs found
+                </h3>
+
                 <p>
                   Try searching with another SKU,
                   name or colour.
                 </p>
+
               </div>
+
             )}
 
           </div>
@@ -638,13 +986,20 @@ export default function CatalogueQA() {
         </section>
 
         {/* REVIEWED */}
-        <ReviewedSKUs reviewed={reviewed} />
+
+        <ReviewedSKUs
+          reviewed={reviewed}
+        />
 
         {/* AUDIT */}
-        <AuditTrail />
+
+        <AuditTrail
+          auditTrail={auditTrail}
+        />
 
       </main>
 
     </div>
+
   );
 }

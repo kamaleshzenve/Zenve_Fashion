@@ -415,7 +415,7 @@ input {
     "Times New Roman",
     serif;
 
-  font-size: clamp(31px, 2.2vw, 40px);
+  font-size: 20px!important;
 
   line-height: 1.1;
 
@@ -433,11 +433,11 @@ input {
 }
 
 .cqa-page-heading p {
-  margin-top: 11px;
+  margin-top: 8px;
 
   color: #756e67;
 
-  font-size: clamp(17px, 1.25vw, 21px);
+  font-size: 14px;
 
   line-height: 1.4;
 }
@@ -473,7 +473,7 @@ input {
 
   gap: 18px;
 
-  margin-bottom: 0;
+  margin-bottom: 2%;
 }
 
 .cqa-stat-card {
@@ -582,11 +582,11 @@ input {
 
   color: #0b0806;
 
-  font-size: clamp(27px, 2vw, 34px);
+  font-size: 20px;
 
   line-height: 1.15;
 
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .cqa-queue-header p {
@@ -594,7 +594,8 @@ input {
 
   color: #776f68;
 
-  font-size: clamp(17px, 1.2vw, 21px);
+  font-size: 14px;
+  font-weight: 600;
 
   line-height: 1.45;
 }
@@ -605,11 +606,12 @@ input {
 ========================================================= */
 
 .cqa-queue-search {
-  width: 100%;
+  width: 30%;
 
-  height: 58px;
+  height: 50px;
 
-  margin-bottom: 31px;
+  margin-bottom: 20px;
+  margin-top: -10px;
 
   display: flex;
 
@@ -651,7 +653,7 @@ input {
 
   color: #1b1713;
 
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .cqa-queue-search input::placeholder {
@@ -728,7 +730,7 @@ input {
 
   color: #090705;
 
-  font-size: clamp(22px, 1.5vw, 27px);
+  font-size: 20px;
 
   line-height: 1.2;
 
@@ -743,11 +745,11 @@ input {
 ========================================================= */
 
 .cqa-status-badge {
-  min-height: 32px;
+  min-height: 30px;
 
   padding:
-    6px
-    15px;
+    5px
+    10px;
 
   display: inline-flex;
 
@@ -763,7 +765,7 @@ input {
 
   white-space: nowrap;
 
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .cqa-status-badge.pending {
@@ -790,11 +792,11 @@ input {
 ========================================================= */
 
 .cqa-sku-code {
-  margin-top: 9px;
+  margin-top: 5px;
 
   color: #746c64;
 
-  font-size: 16px;
+  font-size: 14px;
 
   line-height: 1.4;
 
@@ -809,11 +811,11 @@ input {
 ========================================================= */
 
 .cqa-product-summary {
-  margin-top: 13px;
+  margin-top: 7px;
 
   color: #776f68;
 
-  font-size: clamp(17px, 1.2vw, 21px);
+  font-size: 14px!important;
 
   line-height: 1.45;
 
@@ -854,11 +856,11 @@ input {
 
   align-items: flex-start;
 
-  gap: 8px;
+  gap: 6px;
 
   color: #776f68;
 
-  font-size: clamp(16px, 1.15vw, 20px);
+  font-size: 14px;
 
   line-height: 1.45;
 }
@@ -890,13 +892,13 @@ input {
 ========================================================= */
 
 .cqa-score-input {
-  width: 200px;
+  width: 120px;
 
-  height: 54px;
+  height: 50px!important;
 
   padding:
     0
-    18px;
+    10px;
 
   background: #fffdfa;
 
@@ -906,8 +908,8 @@ input {
 
   color: #1a1612;
 
-  font-size: 18px;
-
+  font-size: 15px;
+font-weight: 700;
   box-shadow:
     0 3px 7px rgba(0, 0, 0, 0.08);
 }
@@ -943,15 +945,15 @@ input {
 
 .cqa-submit-button,
 .cqa-secondary-button {
-  min-height: 54px;
+  min-height: 50px;
 
   padding:
     0
-    20px;
+    10px;
 
   border-radius: 7px;
 
-  font-size: 17px;
+  font-size: 15px;
 
   font-weight: 500;
 
@@ -1009,7 +1011,7 @@ input {
 .cqa-section-card {
   width: 100%;
 
-  margin-top: 2px;
+  margin-top: 2%!important;
 
   padding:
     38px
@@ -1028,11 +1030,11 @@ input {
 }
 
 .cqa-section-description {
-  margin-top: 9px;
+  margin-top: 5px;
 
   color: #776f68;
 
-  font-size: 20px;
+  font-size: 14px;
 
   line-height: 1.4;
 }
@@ -1088,7 +1090,7 @@ input {
 
   color: #15120f;
 
-  font-size: 19px;
+  font-size: 15px;
 
   white-space: nowrap;
 
@@ -1102,7 +1104,7 @@ input {
 
   color: #746c64;
 
-  font-size: 16px;
+  font-size: 14px;
 
   overflow-wrap: anywhere;
 }
@@ -1110,7 +1112,8 @@ input {
 .cqa-reviewed-score {
   color: #15120f;
 
-  font-size: 19px;
+  font-size: 14px;
+  font-weight: 700;
 
   white-space: nowrap;
 }
@@ -1131,9 +1134,9 @@ input {
 .cqa-empty-audit {
   width: 100%;
 
-  min-height: 138px;
+  min-height: 80px;
 
-  margin-top: 28px;
+  margin-top: 20px;
 
   display: flex;
 
@@ -1143,7 +1146,7 @@ input {
 
   text-align: center;
 
-  padding: 20px;
+  padding: 14px;
 
   border:
     1px dashed #d6d0c7;

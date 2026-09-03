@@ -466,7 +466,7 @@ body {
 ========================================================= */
 
 .designer-row {
-  min-height: 153px;
+  min-height: 100px;
 
   display: flex;
   align-items: center;
@@ -624,7 +624,7 @@ body {
 
   color: #746c66;
 
-  font-size: 15px!important;
+  font-size: 12px!important;
 
   line-height: 1.55;
 }
@@ -795,16 +795,16 @@ body {
     "Times New Roman",
     serif;
 
-  font-size: 29px;
+  font-size: 20px;
   font-weight: 400;
 }
 
 .add-designer-heading p {
-  margin: 8px 0 38px;
+  margin: 8px 0 20px;
 
   color: #746c66;
 
-  font-size: 19px;
+  font-size: 14px;
 }
 
 
@@ -847,7 +847,7 @@ body {
 .form-group input,
 .form-group select {
   width: 100%;
-  height: 59px;
+  height: 40px;
 
   padding: 0 19px;
 
@@ -865,7 +865,7 @@ body {
     Helvetica,
     sans-serif;
 
-  font-size: 20px;
+  font-size: 15px;
 
   box-shadow:
     0 3px 8px rgba(42, 31, 23, 0.08);

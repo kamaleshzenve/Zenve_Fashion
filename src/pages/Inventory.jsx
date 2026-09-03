@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/Inventory.css"
+import "../styles/Inventory.css";
 
 /* =========================================================
    INVENTORY DATA
@@ -201,13 +201,19 @@ const Inventory = () => {
           return item;
         }
 
-        const availableToDamage = Math.min(qty, item.available);
+        const availableToDamage = Math.min(
+          qty,
+          item.available
+        );
 
         return {
           ...item,
-          available: item.available - availableToDamage,
-          damaged: item.damaged + availableToDamage,
-          outOfStock: item.available - availableToDamage <= 0,
+          available:
+            item.available - availableToDamage,
+          damaged:
+            item.damaged + availableToDamage,
+          outOfStock:
+            item.available - availableToDamage <= 0,
         };
       })
     );
@@ -230,14 +236,22 @@ const Inventory = () => {
           return item;
         }
 
-        const availableToQuarantine = Math.min(qty, item.available);
+        const availableToQuarantine = Math.min(
+          qty,
+          item.available
+        );
 
         return {
           ...item,
-          available: item.available - availableToQuarantine,
+          available:
+            item.available - availableToQuarantine,
           quarantined:
-            item.quarantined + availableToQuarantine,
-          outOfStock: item.available - availableToQuarantine <= 0,
+            item.quarantined +
+            availableToQuarantine,
+          outOfStock:
+            item.available -
+              availableToQuarantine <=
+            0,
         };
       })
     );
@@ -247,7 +261,10 @@ const Inventory = () => {
      RELEASE QUARANTINE
   ------------------------------------------------------- */
 
-  const handleReleaseQuarantine = (id, quantity) => {
+  const handleReleaseQuarantine = (
+    id,
+    quantity
+  ) => {
     const qty = Number(quantity);
 
     if (!qty || qty <= 0) {
@@ -268,13 +285,23 @@ const Inventory = () => {
         return {
           ...item,
           quarantined:
-            item.quarantined - quantityToRelease,
+            item.quarantined -
+            quantityToRelease,
           available:
-            item.available + quantityToRelease,
+            item.available +
+            quantityToRelease,
           outOfStock: false,
         };
       })
     );
+  };
+
+  /* -------------------------------------------------------
+     BACK TO ALL 12 LAYERS
+  ------------------------------------------------------- */
+
+  const handleBackToLayers = () => {
+    window.history.back();
   };
 
   return (
@@ -288,42 +315,85 @@ const Inventory = () => {
 
         <div className="inventory-header-left">
 
-          {/*<div className="inventory-logo">*/}
-          {/*  <div className="logo-symbol">Z</div>*/}
+          {/* LOGO */}
 
-          {/*  <div className="logo-text">*/}
-          {/*    ZENVE*/}
-          {/*    <span>FASHION</span>*/}
-          {/*  </div>*/}
-          {/*</div>*/}
+          {/*
+          <div className="inventory-logo">
+
+            <div className="logo-symbol">
+              Z
+            </div>
+
+            <div className="logo-text">
+              ZENVE
+              <span>FASHION</span>
+            </div>
+
+          </div>
+          */}
 
           <div className="inventory-title-area">
 
-            <div className="back-link">
-              <span className="back-arrow">←</span>
-              <span>ALL 12 LAYERS</span>
+            {/* =================================================
+                BACK LINK
+            ================================================= */}
+
+            <div
+              className="back-link"
+              onClick={handleBackToLayers}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (
+                  e.key === "Enter" ||
+                  e.key === " "
+                ) {
+                  handleBackToLayers();
+                }
+              }}
+              style={{
+                cursor: "pointer",
+              }}
+            >
+              <span className="back-arrow">
+                ←
+              </span>
+
+              <span>
+                ALL 12 LAYERS
+              </span>
             </div>
 
             <h1>
-              <span className="page-number">05</span>{" "}
+
+              <span className="page-number">
+                05
+              </span>{" "}
+
               Inventory Engine
+
             </h1>
 
             <p>
-              Inventory layer · Physical, reserved, available,
-              damaged, returned, in-transit
+              Inventory layer · Physical, reserved,
+              available, damaged, returned, in-transit
             </p>
 
           </div>
 
         </div>
 
-        {/* Header Right */}
+        {/* =====================================================
+            HEADER RIGHT
+        ===================================================== */}
 
         <div className="inventory-header-right">
 
           <div className="search-box">
-            <span className="search-icon">⌕</span>
+
+            <span className="search-icon">
+              ⌕
+            </span>
 
             <span className="search-placeholder">
               Search everything
@@ -332,6 +402,7 @@ const Inventory = () => {
             <span className="search-shortcut">
               ⌘K
             </span>
+
           </div>
 
           <div className="profile-box">
@@ -367,6 +438,7 @@ const Inventory = () => {
         <section className="summary-grid">
 
           <div className="summary-card">
+
             <span className="summary-label">
               PHYSICAL
             </span>
@@ -378,9 +450,11 @@ const Inventory = () => {
             <span className="summary-description">
               Units on hand
             </span>
+
           </div>
 
           <div className="summary-card">
+
             <span className="summary-label">
               RESERVED
             </span>
@@ -392,9 +466,11 @@ const Inventory = () => {
             <span className="summary-description">
               Held by live orders
             </span>
+
           </div>
 
           <div className="summary-card">
+
             <span className="summary-label">
               AVAILABLE
             </span>
@@ -406,20 +482,26 @@ const Inventory = () => {
             <span className="summary-description">
               Sellable now
             </span>
+
           </div>
 
           <div className="summary-card">
+
             <span className="summary-label">
               BLOCKED
             </span>
 
             <strong className="summary-value">
-              {totals.damaged + totals.quarantined}
+              {
+                totals.damaged +
+                totals.quarantined
+              }
             </strong>
 
             <span className="summary-description">
               Damaged + quarantined
             </span>
+
           </div>
 
         </section>
@@ -437,8 +519,9 @@ const Inventory = () => {
             </h2>
 
             <p>
-              Only available units are sellable. Receiving stock,
-              damage and quarantine are all logged.
+              Only available units are sellable.
+              Receiving stock, damage and quarantine
+              are all logged.
             </p>
 
           </div>
@@ -446,16 +529,20 @@ const Inventory = () => {
           <div className="inventory-list">
 
             {items.map((item) => (
+
               <InventoryCard
                 key={item.id}
                 item={item}
                 onReceive={handleReceive}
                 onDamaged={handleDamaged}
-                onQuarantine={handleQuarantine}
+                onQuarantine={
+                  handleQuarantine
+                }
                 onReleaseQuarantine={
                   handleReleaseQuarantine
                 }
               />
+
             ))}
 
           </div>
@@ -475,8 +562,8 @@ const Inventory = () => {
             </h2>
 
             <p>
-              Applied automatically by the order and returns
-              engines.
+              Applied automatically by the order
+              and returns engines.
             </p>
 
           </div>
@@ -486,11 +573,13 @@ const Inventory = () => {
             <div className="rules-column">
 
               <div className="rule">
-                • Order placed → Available −1, Reserved +1
+                • Order placed → Available −1,
+                Reserved +1
               </div>
 
               <div className="rule">
-                • Delivered → In transit −1, sold recorded
+                • Delivered → In transit −1,
+                sold recorded
               </div>
 
               <div className="rule">
@@ -498,7 +587,8 @@ const Inventory = () => {
               </div>
 
               <div className="rule">
-                • Return failed → Returned −1, Damaged +1
+                • Return failed → Returned −1,
+                Damaged +1
               </div>
 
             </div>
@@ -506,17 +596,18 @@ const Inventory = () => {
             <div className="rules-column">
 
               <div className="rule">
-                • Shipped → Reserved −1, In transit +1
+                • Shipped → Reserved −1,
+                In transit +1
               </div>
 
               <div className="rule">
-                • Cancelled before dispatch → Reserved −1,
-                Available +1
+                • Cancelled before dispatch →
+                Reserved −1, Available +1
               </div>
 
               <div className="rule">
-                • Return passed inspection → Returned −1,
-                Available +1
+                • Return passed inspection →
+                Returned −1, Available +1
               </div>
 
             </div>
@@ -542,29 +633,56 @@ const InventoryCard = ({
   onQuarantine,
   onReleaseQuarantine,
 }) => {
-  const [quantity, setQuantity] = useState("");
+
+  const [quantity, setQuantity] =
+    useState("");
 
   const handleReceiveClick = () => {
-    onReceive(item.id, quantity);
+
+    onReceive(
+      item.id,
+      quantity
+    );
+
     setQuantity("");
+
   };
 
   const handleDamagedClick = () => {
-    onDamaged(item.id, quantity);
+
+    onDamaged(
+      item.id,
+      quantity
+    );
+
     setQuantity("");
+
   };
 
   const handleQuarantineClick = () => {
-    onQuarantine(item.id, quantity);
+
+    onQuarantine(
+      item.id,
+      quantity
+    );
+
     setQuantity("");
+
   };
 
   const handleReleaseClick = () => {
-    onReleaseQuarantine(item.id, quantity);
+
+    onReleaseQuarantine(
+      item.id,
+      quantity
+    );
+
     setQuantity("");
+
   };
 
   return (
+
     <article className="inventory-card">
 
       {/* -----------------------------------------------------
@@ -580,9 +698,11 @@ const InventoryCard = ({
           </h3>
 
           {item.outOfStock && (
+
             <span className="out-stock-badge">
               Out of stock
             </span>
+
           )}
 
           <span className="location-badge">
@@ -604,6 +724,7 @@ const InventoryCard = ({
       <div className="inventory-metrics">
 
         {metricLabels.map((metric) => (
+
           <div
             className="inventory-metric"
             key={metric.key}
@@ -618,6 +739,7 @@ const InventoryCard = ({
             </strong>
 
           </div>
+
         ))}
 
       </div>
@@ -633,7 +755,9 @@ const InventoryCard = ({
           min="1"
           value={quantity}
           onChange={(e) =>
-            setQuantity(e.target.value)
+            setQuantity(
+              e.target.value
+            )
           }
           placeholder="Qty"
           className="quantity-input"
@@ -651,7 +775,9 @@ const InventoryCard = ({
           type="button"
           className="action-button"
           onClick={handleDamagedClick}
-          disabled={item.available === 0}
+          disabled={
+            item.available === 0
+          }
         >
           Mark damaged
         </button>
@@ -659,8 +785,12 @@ const InventoryCard = ({
         <button
           type="button"
           className="action-button"
-          onClick={handleQuarantineClick}
-          disabled={item.available === 0}
+          onClick={
+            handleQuarantineClick
+          }
+          disabled={
+            item.available === 0
+          }
         >
           Quarantine
         </button>
@@ -668,25 +798,32 @@ const InventoryCard = ({
         <button
           type="button"
           className="action-button disabled-button"
-          onClick={handleReleaseClick}
-          disabled={item.quarantined === 0}
+          onClick={
+            handleReleaseClick
+          }
+          disabled={
+            item.quarantined === 0
+          }
         >
           Release quarantine
         </button>
 
         <div className="location-select">
+
           <span>
             {item.location}
           </span>
 
           <span className="select-arrow">
-
+            ▾
           </span>
+
         </div>
 
       </div>
 
     </article>
+
   );
 };
 

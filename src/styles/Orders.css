@@ -166,7 +166,7 @@
 }
 
 .oms-title-row h1 {
-  margin: 0;
+  margin: 2%;
 
   color: #090806;
 
@@ -175,7 +175,7 @@
     "Times New Roman",
     serif;
 
-  font-size: 42px;
+  font-size: 25px!important;
   line-height: 1.05;
   font-weight: 500;
 
@@ -196,11 +196,11 @@
 ========================================================= */
 
 .oms-subtitle {
-  margin: 13px 0 0;
+  margin: 7px 0 0;
 
   color: #756b63;
 
-  font-size: 22px;
+  font-size: 14px!important;
   line-height: 1.35;
 
   font-weight: 400;
@@ -460,9 +460,9 @@
 .oms-lifecycle-card {
   width: 100%;
 
-  min-height: 315px;
+  min-height: 250px;
 
-  margin-top: 0;
+  margin-top: 2%;
 
   padding:
     37px
@@ -495,10 +495,10 @@
     "Times New Roman",
     serif;
 
-  font-size: 32px;
+  font-size: 20px;
   line-height: 1.2;
 
-  font-weight: 500;
+  font-weight: 700;
 
   letter-spacing: -0.5px;
 }
@@ -508,7 +508,7 @@
 
   color: #756c64;
 
-  font-size: 21px;
+  font-size: 14px;
   line-height: 1.45;
 }
 
@@ -520,7 +520,7 @@
 .oms-empty-state {
   width: 100%;
 
-  min-height: 140px;
+  min-height: 100px;
 
   margin-top: 28px;
 
@@ -528,7 +528,7 @@
   align-items: center;
   justify-content: center;
 
-  border: 1px dashed #ded9d0;
+  border: 3px dashed #ded9d0;
   border-radius: 8px;
 
   box-sizing: border-box;
@@ -539,7 +539,7 @@
 
   color: #756c64;
 
-  font-size: 22px;
+  font-size: 16px;
   line-height: 1.4;
 
   text-align: center;

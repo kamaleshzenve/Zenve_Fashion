@@ -115,7 +115,7 @@
     "Times New Roman",
     serif;
 
-  font-size: 35px;
+  font-size: 20px;
   font-weight: 500;
 
   line-height: 1.1;
@@ -132,7 +132,7 @@
 
   color: #766d66;
 
-  font-size: 20px;
+  font-size: 14px;
   line-height: 1.45;
 }
 
@@ -156,14 +156,14 @@
 
 .portal-search {
   height: 53px;
-  min-width: 290px;
+  min-width: 220px!important;
 
   display: flex;
   align-items: center;
 
   gap: 12px;
 
-  padding: 0 13px 0 17px;
+  padding: 0 13px 0 10px;
 
   border: 1px solid #e1dbd3;
   border-radius: 6px;
@@ -172,7 +172,7 @@
 
   color: #766e67;
 
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .portal-search svg {
@@ -225,7 +225,7 @@
 }
 
 .portal-user-name {
-  font-size: 18px;
+  font-size: 14px;
   color: #181411;
 }
 
@@ -273,7 +273,7 @@
 
 .signed-in-select {
   width: 100%;
-  height: 53px;
+  height: 40px;
 
   appearance: none;
   -webkit-appearance: none;
@@ -288,7 +288,7 @@
   color: #211c18;
 
   font-family: inherit;
-  font-size: 18px;
+  font-size: 14px;
 
   outline: none;
 
@@ -332,7 +332,7 @@
   grid-template-columns:
     repeat(4, minmax(0, 1fr));
 
-  gap: 18px;
+  gap: 10px;
 
   margin-bottom: 0;
 }
@@ -389,7 +389,7 @@
 .portal-section {
   width: 100%;
 
-  margin-top: 0;
+  margin-top: 2%!important;
 
   padding: 32px 28px;
 
@@ -416,7 +416,7 @@
     "Times New Roman",
     serif;
 
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 500;
 
   line-height: 1.2;
@@ -427,7 +427,7 @@
 
   color: #756c64;
 
-  font-size: 20px;
+  font-size: 14px;
 
   line-height: 1.4;
 }
@@ -473,7 +473,7 @@
 .profile-value {
   color: #17130f;
 
-  font-size: 20px;
+  font-size: 14px;
 
   line-height: 1.35;
 
@@ -514,7 +514,7 @@
 .toggle-label {
   color: #766c64;
 
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
 
   letter-spacing: 1.9px;
@@ -523,7 +523,7 @@
 .form-field input,
 .form-field select {
   width: 100%;
-  height: 57px;
+  height: 45px;
 
   padding: 0 17px;
 
@@ -595,13 +595,13 @@
 ========================================================= */
 
 .toggle-field {
-  height: 99px;
+  height: 50px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  gap: 20px;
+  gap: 10px;
 
   padding: 0 20px;
 
@@ -704,11 +704,11 @@
 ========================================================= */
 
 .submit-qa-button {
-  height: 59px;
+  height: 50px;
 
-  margin-top: 29px;
+  margin-top: 20px;
 
-  padding: 0 28px;
+  padding: 0 20px;
 
   border: none;
   border-radius: 7px;
@@ -719,7 +719,7 @@
 
   font-family: inherit;
 
-  font-size: 19px;
+  font-size: 14px;
   font-weight: 500;
 
   cursor: pointer;
@@ -784,17 +784,17 @@
 
   letter-spacing: 1.8px;
 
-  text-align: left;
+  text-align: center;
 }
 
 .stock-table td {
-  padding: 16px 0;
+  padding: 14px 0;
 
   border-bottom: 1px solid #e1dbd3;
 
   color: #191512;
 
-  font-size: 18px;
+  font-size: 15px !important;
 
   vertical-align: middle;
 }
@@ -810,7 +810,7 @@
 .sku-product-name {
   color: #17130f;
 
-  font-size: 20px;
+  font-size: 15 px !important;
   line-height: 1.35;
 }
 
@@ -819,7 +819,7 @@
 
   color: #756b63;
 
-  font-size: 16px;
+  font-size: 12px !important;
 
   letter-spacing: 0.3px;
 }
@@ -828,7 +828,7 @@
   display: inline-flex;
   align-items: center;
 
-  padding: 7px 17px;
+  padding: 7px 10px;
 
   border-radius: 999px;
 
@@ -836,7 +836,7 @@
 
   color: #27804c;
 
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
 
   letter-spacing: 0.4px;
@@ -853,7 +853,7 @@
 }
 
 .orders-empty-state {
-  min-height: 138px;
+  min-height: 100px;
 
   display: flex;
   flex-direction: column;
@@ -861,9 +861,9 @@
   align-items: center;
   justify-content: center;
 
-  margin-top: 32px;
+  margin-top: 20px;
 
-  padding: 30px;
+  padding: 20px;
 
   border: 1px dashed #ddd7cf;
   border-radius: 8px;
@@ -876,25 +876,25 @@
 
   color: #756c64;
 
-  font-size: 20px;
+  font-size: 15px;
 }
 
-.storefront-link {
-  display: inline-block;
+/*.storefront-link {*/
+/*  display: inline-block;*/
 
-  margin-top: 14px;
+/*  margin-top: 14px;*/
 
-  color: #6f533b;
+/*  color: #6f533b;*/
 
-  font-size: 16px;
-  font-weight: 500;
+/*  font-size: 16px;*/
+/*  font-weight: 500;*/
 
-  text-decoration: none;
-}
+/*  text-decoration: none;*/
+/*}*/
 
-.storefront-link:hover {
-  text-decoration: underline;
-}
+/*.storefront-link:hover {*/
+/*  text-decoration: underline;*/
+/*}*/
 
 /* =========================================================
    LARGE DESKTOP

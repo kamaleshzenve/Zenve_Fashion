@@ -1,8 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Settlement.css";
 
 /* =====================================================
-   ICONS
+  ICONS
 ===================================================== */
 
 function SearchIcon() {
@@ -52,24 +53,24 @@ function ArrowLeftIcon() {
 
 
 /* =====================================================
-   ZENVE LOGO
+  ZENVE LOGO
 ===================================================== */
 
 function ZenveLogo() {
   return (
     <div className="settlement-logo">
 
-      {/*<div className="settlement-logo-symbol">*/}
-      {/*  Z*/}
-      {/*</div>*/}
+      {/* <div className="settlement-logo-symbol">
+        Z
+      </div> */}
 
-      {/*<div className="settlement-logo-name">*/}
-      {/*  ZENVE*/}
-      {/*</div>*/}
+      {/* <div className="settlement-logo-name">
+        ZENVE
+      </div> */}
 
-      {/*<div className="settlement-logo-fashion">*/}
-      {/*  FASHION*/}
-      {/*</div>*/}
+      {/* <div className="settlement-logo-fashion">
+        FASHION
+      </div> */}
 
     </div>
   );
@@ -77,10 +78,24 @@ function ZenveLogo() {
 
 
 /* =====================================================
-   HEADER
+  HEADER
 ===================================================== */
 
 function SettlementHeader() {
+
+  const navigate = useNavigate();
+
+  const handleAllLayersClick = () => {
+    navigate("/");
+  };
+
+  const handleAllLayersKeyDown = (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      handleAllLayersClick();
+    }
+  };
+
   return (
     <header className="settlement-header">
 
@@ -93,12 +108,20 @@ function SettlementHeader() {
       {/* Header title area */}
       <div className="settlement-header-content">
 
-        <div className="settlement-back">
+        <div
+          className="settlement-back"
+          role="button"
+          tabIndex={0}
+          onClick={handleAllLayersClick}
+          onKeyDown={handleAllLayersKeyDown}
+        >
+
           <ArrowLeftIcon />
 
-          <span>
+          <span className="settlement-back-text">
             ALL 12 LAYERS
           </span>
+
         </div>
 
 
@@ -164,7 +187,7 @@ function SettlementHeader() {
 
 
 /* =====================================================
-   STAT CARD
+  STAT CARD
 ===================================================== */
 
 function SettlementStat({
@@ -195,7 +218,7 @@ function SettlementStat({
 
 
 /* =====================================================
-   EMPTY STATE
+  EMPTY STATE
 ===================================================== */
 
 function SettlementEmptyState({
@@ -210,7 +233,7 @@ function SettlementEmptyState({
 
 
 /* =====================================================
-   SETTLEMENT LEDGER
+  SETTLEMENT LEDGER
 ===================================================== */
 
 function SettlementLedger() {
@@ -241,7 +264,7 @@ function SettlementLedger() {
 
 
 /* =====================================================
-   WHAT IS INCLUDED
+  WHAT IS INCLUDED
 ===================================================== */
 
 function IncludedSection() {
@@ -268,27 +291,34 @@ function IncludedSection() {
 
           <div className="settlement-rule">
             <span>•</span>
+
             <p>
               GMV – customer realised merchandise value
             </p>
           </div>
 
+
           <div className="settlement-rule">
             <span>•</span>
+
             <p>
               Discounts tracked to their funding source
             </p>
           </div>
 
+
           <div className="settlement-rule">
             <span>•</span>
+
             <p>
               Taxes and invoicing rules applied
             </p>
           </div>
 
+
           <div className="settlement-rule">
             <span>•</span>
+
             <p>
               Net settlement is fully auditable
             </p>
@@ -302,27 +332,34 @@ function IncludedSection() {
 
           <div className="settlement-rule">
             <span>•</span>
+
             <p>
               Take rate – designer/category specific
             </p>
           </div>
 
+
           <div className="settlement-rule">
             <span>•</span>
+
             <p>
               Returns reverse the affected settlement
             </p>
           </div>
 
+
           <div className="settlement-rule">
             <span>•</span>
+
             <p>
               Adjustments only with approval
             </p>
           </div>
 
+
           <div className="settlement-rule">
             <span>•</span>
+
             <p>
               Status: pending → approved → paid → reconciled
             </p>
@@ -338,7 +375,7 @@ function IncludedSection() {
 
 
 /* =====================================================
-   MAIN PAGE
+  MAIN PAGE
 ===================================================== */
 
 function Settlement() {
@@ -364,17 +401,20 @@ function Settlement() {
             description="0 settlements"
           />
 
+
           <SettlementStat
             label="ZENVE COMMISSION"
             value="₹0"
             description="Take rate earnings"
           />
 
+
           <SettlementStat
             label="PAYABLE TO DESIGNERS"
             value="₹0"
             description="Not yet paid"
           />
+
 
           <SettlementStat
             label="REVERSED BY RETURNS"
@@ -405,7 +445,7 @@ function Settlement() {
 
 
 /* =====================================================
-   DEFAULT EXPORT
+  DEFAULT EXPORT
 ===================================================== */
 
 export default Settlement;

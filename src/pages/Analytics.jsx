@@ -192,7 +192,9 @@ function FileDownloadIcon() {
 function KPICard({ label, value, description }) {
   return (
     <div className="bi-kpi-card">
-      <div className="bi-kpi-label">{label}</div>
+      <div className="bi-kpi-label">
+        {label}
+      </div>
 
       <div className="bi-kpi-value">
         {value}
@@ -224,30 +226,56 @@ function BIHeader() {
             className="bi-logo"
             onError={(event) => {
               event.currentTarget.style.display = "none";
-              event.currentTarget.nextElementSibling.style.display = "flex";
+
+              if (event.currentTarget.nextElementSibling) {
+                event.currentTarget.nextElementSibling.style.display =
+                  "flex";
+              }
             }}
           />
 
-          {/*<div className="bi-logo-fallback">*/}
-          {/*  <span className="fallback-z">Z</span>*/}
-          {/*  <span className="fallback-text">*/}
-          {/*    ZENVE*/}
-          {/*    <small>FASHION</small>*/}
-          {/*  </span>*/}
-          {/*</div>*/}
+          {/*
+          <div className="bi-logo-fallback">
+            <span className="fallback-z">Z</span>
+
+            <span className="fallback-text">
+              ZENVE
+              <small>FASHION</small>
+            </span>
+          </div>
+          */}
         </div>
 
         {/* TITLE */}
         <div className="bi-title-area">
 
-          <div className="bi-back">
-            <span className="back-arrow">←</span>
-            <span>ALL 12 LAYERS</span>
-          </div>
+          {/* =================================================
+              ALL 12 LAYERS BUTTON
+          ================================================= */}
+
+          <button
+            type="button"
+            className="bi-back"
+            onClick={() => window.history.back()}
+            aria-label="Go back to all 12 layers"
+          >
+            <span className="back-arrow">
+              ←
+            </span>
+
+            <span>
+              ALL 12 LAYERS
+            </span>
+          </button>
 
           <h1>
-            <span className="layer-number">11</span>
-            <span>BI Dashboards</span>
+            <span className="layer-number">
+              11
+            </span>
+
+            <span>
+              BI Dashboards
+            </span>
           </h1>
 
           <p>
@@ -260,7 +288,9 @@ function BIHeader() {
         {/* HEADER ACTIONS */}
         <div className="bi-header-actions">
 
+          {/* SEARCH */}
           <div className="bi-search-box">
+
             <SearchIcon />
 
             <input
@@ -271,8 +301,10 @@ function BIHeader() {
             <span className="keyboard-shortcut">
               ⌘K
             </span>
+
           </div>
 
+          {/* USER */}
           <div className="bi-user-box">
 
             <UserIcon />
@@ -302,12 +334,16 @@ function GMVPanel() {
   return (
     <section className="bi-panel gmv-panel">
 
-      <h2>GMV by designer</h2>
+      <h2>
+        GMV by designer
+      </h2>
 
       <div className="bi-empty-box">
+
         <span>
           No sales recorded yet.
         </span>
+
       </div>
 
     </section>
@@ -322,7 +358,9 @@ function InventoryPanel() {
   return (
     <section className="bi-panel inventory-panel">
 
-      <h2>Inventory split</h2>
+      <h2>
+        Inventory split
+      </h2>
 
       <div className="donut-wrapper">
 
@@ -355,11 +393,15 @@ function SKUPerformance() {
     <section className="bi-panel sku-panel">
 
       <div className="bi-section-heading">
-        <h2>SKU performance</h2>
+
+        <h2>
+          SKU performance
+        </h2>
 
         <p>
           Views, units sold, revenue, stock and return exposure.
         </p>
+
       </div>
 
       <div className="sku-table-wrapper">
@@ -380,6 +422,7 @@ function SKUPerformance() {
           <tbody>
 
             {skuData.map((item, index) => (
+
               <tr key={index}>
 
                 <td className="sku-name-cell">
@@ -415,6 +458,7 @@ function SKUPerformance() {
                 </td>
 
               </tr>
+
             ))}
 
           </tbody>
@@ -447,6 +491,7 @@ function OperationalReports() {
       <div className="reports-header">
 
         <div>
+
           <h2>
             Operational report export
           </h2>
@@ -455,14 +500,20 @@ function OperationalReports() {
             Download the whole book of record, or just the section
             you need. Opens directly in Excel or Sheets.
           </p>
+
         </div>
 
         <button
+          type="button"
           className="export-full-button"
           onClick={handleExport}
         >
           <FileDownloadIcon />
-          <span>Export full report</span>
+
+          <span>
+            Export full report
+          </span>
+
         </button>
 
       </div>
@@ -472,6 +523,7 @@ function OperationalReports() {
         {reports.map((report, index) => (
 
           <button
+            type="button"
             key={index}
             className="report-card"
             onClick={() =>
@@ -511,7 +563,9 @@ function TopMovers() {
   return (
     <section className="bi-panel movers-panel">
 
-      <h2>Top movers</h2>
+      <h2>
+        Top movers
+      </h2>
 
       <div className="bi-empty-box movers-empty">
 
@@ -544,12 +598,14 @@ export default function BIDashboards() {
         <section className="bi-kpi-grid">
 
           {kpis.map((item, index) => (
+
             <KPICard
               key={index}
               label={item.label}
               value={item.value}
               description={item.description}
             />
+
           ))}
 
         </section>
